@@ -1,0 +1,401 @@
+@media (max-width: 768px) {
+
+ .Notice-section .custom-card {
+
+ margin: 15px 0;
+ min-height: auto;
+ height: auto;
+
+}
+
+.class-time-table-section .container__img-holder {
+
+ margin: 10px;
+
+}
+
+}
+
+@media (max-width: 424px) {
+
+ .mini-mobile {
+
+ flex-wrap: wrap;
+ justify-content: center;
+
+}
+
+}
+
+@media (max-width: 768px) {
+
+ .event-card img {
+
+ height: 250px !important;
+
+}
+
+.Notice-section .custom-card {
+
+ min-height: 400px;
+ height: 400px;
+
+}
+
+.banner-btn {
+
+ margin-bottom: 20px;
+
+}
+
+}
+
+@media (min-width: 576px) {
+
+ .custom-background svg {
+
+ left: calc(50% - 30rem);
+ height: 42.375rem;
+
+}
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+ .banner-section img {
+
+ width: 130px !important;
+ height: 160px !important;
+
+}
+
+.Parents-say-image {
+
+ width: 45%;
+
+}
+
+.Parents-say-content {
+
+ width: 55%;
+
+}
+
+.Alumni-card-image {
+
+ width: 45%;
+
+}
+
+.Alumni-card-content {
+
+ width: 55%;
+
+}
+
+.yellow-card {
+
+ max-width: 100%;
+ height: auto;
+
+}
+
+.red-card {
+
+ max-width: 100%;
+ height: auto;
+
+}
+
+.section {
+
+ padding-top: 30px;
+ padding-bottom: 30px;
+
+}
+
+.for-mobile {
+
+ margin-top: 20px;
+
+}
+
+.event-card img {
+
+ height: 350px;
+
+}
+
+.about-S.S.V School .staggered-container {
+
+ margin: 20px 0 auto;
+
+}
+
+.Parents-say-card img {
+
+ height: 225px;
+
+}
+
+.social-icon {
+
+ justify-content: flex-start;
+
+}
+
+.mission-vission-section h1 {
+
+ text-align: center;
+
+}
+
+.mission-vission-section h2 {
+
+ text-align: center;
+ margin-top: 20px;
+
+}
+
+.mission-vission-section p {
+
+ padding-right: 0;
+ text-align: center;
+
+}
+
+.Chairman-section .author-des p:nth-child(1) {
+
+ padding: 5px 0 0 0;
+ text-align: center;
+
+}
+
+.Chairman-section .author-des p:nth-child(2) {
+
+ padding: 0;
+
+}
+
+.Coordinators-cards {
+
+ border-bottom: 1px solid #eee;
+
+}
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+ .our-leaders-card img {
+
+ width: 100%;
+ height: auto;
+
+}
+
+.yellow-card {
+
+ max-width: 100%;
+ height: auto;
+
+}
+
+.red-card {
+
+ max-width: 100%;
+ height: auto;
+
+}
+
+.section {
+
+ padding-top: 30px;
+ padding-bottom: 30px;
+
+}
+
+.event-card img {
+
+ height: 200px;
+
+}
+
+.about-S.S.V School .card-mission {
+
+ flex-direction: column;
+
+}
+
+.about-S.S.V School .card-mission .card-svg {
+
+ width: fit-content;
+
+}
+
+.Notice-section .custom-card {
+
+ margin: 0;
+
+}
+
+.mission-vission-section p {
+
+ padding-right: 0;
+
+}
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+
+ .our-leaders-card img {
+
+ width: 100%;
+ height: auto;
+
+}
+
+.blog-section .blog-section-content h2 {
+
+ font-size: 24px;
+
+}
+
+.blog-section .blog-section-content:before {
+
+ height: 75%;
+
+}
+
+.section {
+
+ padding-top: 30px;
+ padding-bottom: 30px;
+
+}
+
+.event-card-body {
+
+ padding: 0px 2px 0px 5px;
+
+}
+
+.banner-section img {
+
+ width: 165px !important;
+ height: 200px !important;
+
+}
+
+.event-card img {
+
+ width: 200px !important;
+ height: 350px !important;
+
+}
+
+}
+
+@media only screen and (min-width: 1441px) and (max-width: 2560px) {
+
+ .our-leaders-card img {
+
+ width: 100%;
+ height: auto;
+
+}
+
+.blog-section .blog-section-content {
+
+ padding: 25% 20%;
+
+}
+
+.blog-section .blog-section-content:before {
+
+ height: 40%;
+
+}
+
+.event-card-body {
+
+ padding: 1% 2%;
+
+}
+
+.banner-slider-section .banner-slider .banner-slider-card img {
+
+ height: 300px 
+
+}
+
+}
+
+@media only screen and (min-width:1400px) and (max-width:2560px) {
+
+ .navbar-collapse {
+
+ flex-grow: 1;
+
+}
+
+.our-leaders-card img {
+
+ width: 100%;
+ height: auto;
+
+}
+
+}
+
+@media (max-width:480px) {
+
+ .our-leaders-card img {
+
+ width: 100%;
+ height: auto;
+
+}
+
+.blog-section .blog-section-content h2 {
+
+ font-size: 20px;
+
+}
+
+.blog-section .blog-section-content:before {
+
+ height: 80%;
+
+}
+
+.parents-say-2 .parents-say-card-parent .card-body .post-date p {
+
+ text-align: start !important;
+
+}
+
+.parents-say-2 .parents-say-card-parent .card-body {
+
+ height: auto !important;
+ flex-wrap: wrap;
+ justify-content: center;
+
+}
+
+.event-card {
+
+ flex-direction: column !important;
+
+}
+
+.event-card img {
+
+ width: 100% !important;
+ height: auto !important;
+
+}
+
+}

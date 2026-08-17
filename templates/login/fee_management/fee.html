@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Management Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #f3f6fb;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #0f172a;
+        }
+
+        .container-fluid {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .page-title {
+            background: #0d6efd;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            font-size: 26px;
+            margin: 20px 0 25px 0;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .table-box {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 60px;
+        }
+
+        .btn-custom {
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .table-fee thead {
+            background: #0d6efd;
+            color: white;
+        }
+
+        .table-fee th {
+            padding: 14px;
+            text-align: center;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+
+        .table-fee td {
+            vertical-align: middle;
+            text-align: center;
+            padding: 12px 10px;
+            background: #fff;
+        }
+
+        .table-fee tbody tr:hover {
+            background: #eef5ff;
+        }
+
+        .search-box {
+            max-width: 320px;
+        }
+
+        .form-select,
+        .form-control,
+        .control-input {
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 8px 12px;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+
+        .form-select:focus,
+        .form-control:focus,
+        .control-input:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+            background-color: #fff;
+        }
+
+        .kpi-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border: 1px solid #93c5fd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            min-height: 120px;
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        .badge-paid {
+            background-color: #d1fae5;
+            color: #065f46;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 6px;
+        }
+
+        .badge-pending {
+            background-color: #ffedd5;
+            color: #9a3412;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 6px;
+        }
+
+        .btn-update {
+            border: 1px solid #94a3b8;
+            background-color: #f1f5f9;
+            color: #1d4ed8;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 5px 14px;
+            border-radius: 6px;
+        }
+
+        .btn-update:hover {
+            background-color: #e2e8f0;
+            border-color: #64748b;
+            color: #1e40af;
+        }
+
+        .inline-edit-row {
+            background-color: #f8fafc !important;
+        }
+
+        .inline-form-container {
+            padding: 20px;
+            background: #f8fafc;
+            border-top: 1px dashed #cbd5e1;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .pagination-container {
+            background-color: #ffffff;
+            border: 1px solid #e3e6f0;
+            border-radius: 8px;
+            padding: 12px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+        }
+
+        .pagination-container .btn {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 6px !important;
+        }
+
+        .pagination-container .btn-warning {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: #212529;
+        }
+
+        .pagination-container .btn-success {
+            background-color: #090b83 !important;
+            border-color: #090b83 !important;
+            color: #ffffff !important;
+        }
+
+        .pagination-info {
+            background-color: #f8f9fc !important;
+            border: 1px solid #d1d3e2 !important;
+            color: #4e73df !important;
+            font-weight: 500;
+        }
+
+        .student-badge {
+            background-color: #090b83 !important;
+            padding: 6px 10px;
+            font-size: 13px;
+            border-radius: 20px !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid mt-3">
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category if category != 'message' else 'success' }} alert-dismissible fade show mb-4 shadow-sm" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i> {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <div class="d-flex justify-content-between align-items-center">
+            <a href="javascript:history.back()" class="btn btn-secondary" style="margin-left: 20px;">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </a>
+        </div>
+
+        <div class="page-title">
+            <i class="fa-solid fa-wallet"></i>
+            Fee Management
+        </div>
+
+        <div class="row g-3 mb-4">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="kpi-card d-flex align-items-center gap-3">
+                    <div class="icon-box"><i class="bi bi-people-fill"></i></div>
+                    <div>
+                        <span class="text-white-50 small d-block mb-1">Total Students</span>
+                        <h3 class="mb-0 fw-bold text-white">{{fee_count}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="kpi-card d-flex align-items-center gap-3">
+                    <div class="icon-box"><i class="bi bi-wallet2"></i></div>
+                    <div>
+                        <span class="text-white-50 small d-block mb-1">Total Fee Collected</span>
+                        <h3 class="mb-0 fw-bold text-white">₹ {{total_collection}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="kpi-card d-flex align-items-center gap-3">
+                    <div class="icon-box"><i class="bi bi-exclamation-circle-fill"></i></div>
+                    <div>
+                        <span class="text-white-50 small d-block mb-1">Pending Fee</span>
+                        <h3 class="mb-0 fw-bold text-white">₹ {{pending_fee}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="kpi-card d-flex align-items-center gap-3">
+                    <div class="icon-box"><i class="bi bi-credit-card-2-front-fill"></i></div>
+                    <div>
+                        <span class="text-white-50 small d-block mb-1">Total Paid Student</span>
+                        <h3 class="mb-0 fw-bold text-white">{{paid_count}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-box">
+            <div class="d-flex justify-content-between flex-wrap mb-3">
+                <div>
+                    <a href="/add_fee.html" class="btn btn-primary btn-custom">
+                        <i class="fa-solid fa-plus"></i> Add Fee
+                    </a>
+                    <a href="/students/export" class="btn btn-warning btn-custom text-white">
+                        <i class="fa-solid fa-file-csv"></i> Export CSV
+                    </a>
+                </div>
+
+                <form action="/search_query" method="GET" class="d-flex gap-2 flex-wrap">
+                    <select class="form-select rounded-2 border-1" style="width:120px;">
+                        <option selected>All Classes</option>
+                        <option value="Nursery">Nursery</option>
+                        <option value="LKG">LKG</option>
+                        <option value="UKG">UKG</option>
+                        <option value="Class 1">Class 1</option>
+                        <option value="Class 2">Class 2</option>
+                        <option value="Class 3">Class 3</option>
+                        <option value="Class 4">Class 4</option>
+                        <option value="Class 5">Class 5</option>
+                        <option value="Class 6">Class 6</option>
+                        <option value="Class 7">Class 7</option>
+                        <option value="Class 8">Class 8</option>
+                        <option value="Class 9">Class 9</option>
+                        <option value="Class 10">Class 10</option>
+                        <option value="Class 11">Class 11</option>
+                        <option value="Class 12">Class 12</option>
+                    </select>
+
+                    <select name="month" class="form-select rounded-2 border-1" style="width:140px;">
+                        <option value="">All Months</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+
+                    <div class="search-box">
+                        <div class="input-group">
+                            <input type="text" name="query" value="{{ query }}" class="form-control" placeholder="Search Student...">
+                            <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle table-fee" id="feeMainTable">
+                        <thead>
+                            <tr>
+                                <th>S.no</th>
+                                <th>Student ID</th>
+                                <th>Student Name</th>
+                                <th>Class</th>
+                                <th>Fee Month</th>
+                                <th>Total Fee</th>
+                                <th>Paid Amount</th>
+                                <th>Balance</th>
+                                <th>Payment Date</th>
+                                <th>Payment Mode</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for fee in fees %}
+                            <tr id="row-{{ fee[0] }}">
+                                <td>{{ loop.index + ((page-1)*10) }}</td>
+                                <td class="fw-semibold field-id">{{ fee[1] }}</td>
+                                <td class="fw-medium field-name">{{ fee[2] }}</td>
+                                <td class="field-class">{{ fee[3] }}</td>
+                                <td class="field-month">{{ fee[4] }}</td>
+                                <td class="field-total" data-value="{{ fee[5] }}">₹ {{ fee[5] }}</td>
+                                <td class="field-paid" data-value="{{ fee[6] }}">₹ {{ fee[6] }}</td>
+                                <td class="field-balance" data-value="{{ fee[7] }}" style="{% if fee[7]|string|replace('₹','')|replace(',','')|trim|int <= 0 %}color: #059669 !important; font-weight: 600;{% else %}color: #dc2626 !important; font-weight: 600;{% endif %}">₹ {{ fee[7] }}</td>
+                                <td class="field-date">{{ fee[8] }}</td>
+                                <td class="field-mode">{{ fee[9] }}</td>
+                                <td>
+                                    {% if fee[10] == 'Paid' %}
+                                        <span class="badge-paid field-status rounded-0">Paid</span>
+                                    {% else %}
+                                        <span class="badge-pending field-status rounded-0">Pending</span>
+                                    {% endif %}
+                                </td>
+                                <td class="text-center">
+                                    <button class="btn btn-update rounded-0" onclick="toggleEditRow('{{ fee[0] }}')">Update</button>
+                                </td>
+                            </tr>
+                            
+                            <tr id="edit-row-{{ fee[0] }}" class="inline-edit-row" style="display: none;">
+                                <td colspan="12" class="p-0">
+                                    <div class="inline-form-container" id="sliding-form-container-{{ fee[0] }}">
+                                        <h6 class="fw-bold text-primary mb-3 text-start"><i class="bi bi-pencil-square me-2"></i>Update Fee Details ({{ fee[0] }})</h6>
+                                        <form action="/update_fees/{{ fee[0] }}" method="POST" onsubmit="return confirmUpdate('{{ fee[1] }}')">
+                                            <div class="row g-3 text-start">
+                                                <div class="col-6 col-md-2">
+                                                    <label class="form-label small fw-bold text-secondary">Student ID</label>
+                                                    <input type="text" name="id_no" class="form-control control-input bg-white" id="form-id-{{ fee[0] }}" value="{{ fee[1] }}" readonly>
+                                                </div>
+                                                <div class="col-6 col-md-2">
+                                                    <label class="form-label small fw-bold text-secondary">Student Name</label>
+                                                    <input type="text" name="name" class="form-control control-input bg-white" id="form-name-{{ fee[0] }}" value="{{ fee[2] }}" readonly>
+                                                </div>
+                                                <div class="col-6 col-md-2">
+                                                    <label class="form-label small fw-bold text-secondary">Class</label>
+                                                    <input type="text" name="classes" class="form-control control-input bg-white" id="form-class-{{ fee[0] }}" value="{{ fee[3] }}" readonly>
+                                                </div>
+                                                <div class="col-6 col-md-2">
+                                                    <label class="form-label small fw-bold text-secondary">Fee Month</label>
+                                                    <input type="text" name="fee_month" class="form-control control-input bg-white" id="form-month-{{ fee[0] }}" value="{{ fee[4] }}" required>
+                                                </div>
+                                                <div class="col-6 col-md-2">
+                                                    <label class="form-label small fw-bold text-secondary">Total Fee<span class="required-star">*</span></label>
+                                                    <input type="number" name="total_fee" class="form-control control-input bg-white" id="form-total-{{ fee[0] }}" value="{{ fee[5] }}" readonly>
+                                                </div>
+                                                <div class="col-6 col-md-2">
+                                                    <label class="form-label small fw-bold text-secondary">Paid Amount<span class="required-star">*</span></label>
+                                                    <input type="number" name="paid_amount" class="form-control control-input bg-white" id="form-paid-{{ fee[0] }}" value="{{ fee[6] }}" oninput="runBalanceCalculator('{{ fee[0] }}')" required>
+                                                </div>
+                                                <div class="col-6 col-md-2">
+                                                    <label class="form-label small fw-bold text-secondary">Balance</label>
+                                                    <input type="hidden" id="original-balance-{{ fee[0] }}" value="{{ fee[7] }}">
+                                                    <input type="number" id="form-balance-{{ fee[0] }}" name="balance" class="form-control control-input bg-white" value="{{ fee[7] }}" readonly>
+                                                </div>
+                                                <div class="col-6 col-md-2">
+                                                    <label class="form-label small fw-bold text-secondary">Payment Date<span class="required-star">*</span></label>
+                                                    <input type="text" name="payment_date" class="form-control control-input bg-white" id="form-date-{{ fee[0] }}" value="{{ fee[8] }}" required>
+                                                </div>
+                                                <div class="col-6 col-md-2">
+                                                    <label class="form-label small fw-bold text-secondary">Payment Mode<span class="required-star">*</span></label>
+                                                    <select name="payment_mode" class="form-select control-input bg-white" id="form-mode-{{ fee[9] }}" required>
+                                                        <option value="UPI" {% if fee[9] == 'UPI' %}selected{% endif %}>UPI</option>
+                                                        <option value="Cash" {% if fee[9] == 'Cash' %}selected{% endif %}>Cash</option>
+                                                        <option value="Bank" {% if fee[9] == 'Bank' or fee[9] == 'Bank Transfer' %}selected{% endif %}>Bank Transfer</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-6 col-md-2">
+                                                    <label class="form-label small fw-bold text-secondary">Status<span class="required-star">*</span></label>
+                                                    <input type="text" id="form-status-{{ fee[0] }}" name="status" class="form-control control-input bg-white" value="{{ fee[10] }}" readonly>
+                                                </div>
+                                                <div class="col-12 col-md-4 d-flex align-items-end gap-2 justify-content-end">
+                                                    <button type="button" class="btn btn-sm btn-light border px-3" onclick="toggleEditRow('{{ fee[0] }}')">Cancel</button>
+                                                    <button type="submit" class="btn btn-sm btn-primary px-4">Save Changes</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mt-4 pagination-container">
+                    <div>
+                        <a href="/dashboard.html" class="btn btn-secondary btn-sm">
+                            <i class="bi bi-arrow-left me-1"></i>Back
+                        </a>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        {% if page > 1 %}
+                            <a href="{{ url_for('fees.fee', page=page-1) }}" class="btn btn-warning me-2 btn-sm">Previous</a>
+                        {% else %}
+                            <button class="btn btn-sm" disabled>Previous</button>
+                        {% endif %}
+
+                        <span class="btn btn-light btn-sm pagination-info">
+                            Page <strong>{{ page }}</strong> of {{ total_pages }}
+                        </span>
+
+                        {% if page < total_pages %}
+                            <a href="{{ url_for('fees.fee', page=page+1) }}" class="btn btn-success ms-2 btn-sm">Next</a>
+                        {% else %}
+                            <button class="btn btn-sm" disabled>Next</button>
+                        {% endif %}
+                    </div>
+
+                    <div class="text-muted small fw-bold">
+                        Total Students: <span class="badge student-badge">{{ fee_count }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleEditRow(id){
+            const row = document.getElementById("edit-row-" + id);
+            if(row.style.display == "none"){
+                row.style.display = "table-row";
+            } else {
+                row.style.display = "none";
+            }
+        }
+
+        function runBalanceCalculator(id) {
+            const totalFee = Number(document.getElementById("form-total-" + id).value) || 0;
+            const paidAmount = Number(document.getElementById("form-paid-" + id).value) || 0;
+
+            let newBalance = totalFee - paidAmount;
+
+            if (newBalance <= 0) {
+                newBalance = 0;
+                document.getElementById("form-status-" + id).value = "Paid";
+            } else {
+                document.getElementById("form-status-" + id).value = "Pending";
+            }
+
+            document.getElementById("form-balance-" + id).value = newBalance;
+        }
+
+        function submitInlineData(e, id) {
+            e.preventDefault();
+            const mainRow = document.getElementById(`row-${id}`);
+
+            const updatedPaid = parseInt(document.getElementById('form-paid-' + id).value) || 0;
+            const totalVal = parseInt(document.getElementById('form-total-' + id).value) || 0;
+            const computedBal = totalVal - updatedPaid;
+            const updatedDate = document.getElementById('form-date-' + id).value;
+            const updatedMode = document.getElementById('form-mode-' + id).value;
+            const updatedStatus = document.getElementById('form-status-' + id).value;
+            
+            mainRow.querySelector('.field-paid').setAttribute('data-value', updatedPaid);
+            mainRow.querySelector('.field-paid').innerText = "₹ " + updatedPaid.toLocaleString();
+
+            const balanceCell = mainRow.querySelector('.field-balance');
+            balanceCell.setAttribute('data-value', computedBal);
+            balanceCell.innerText = "₹ " + computedBal.toLocaleString();
+            balanceCell.style.setProperty('color', computedBal <= 0 ? '#059669' : '#dc2626', 'important');
+
+            mainRow.querySelector('.field-date').innerText = updatedDate || "-";
+            mainRow.querySelector('.field-mode').innerText = updatedMode || "-";
+
+            const statusTd = mainRow.querySelector('.field-status');
+            if(statusTd) {
+                statusTd.innerText = updatedStatus;
+                statusTd.className = updatedStatus === 'Paid' ? "badge-paid field-status rounded-0" : "badge-pending field-status rounded-0";
+            }
+
+            toggleEditRow(id);
+        }
+        function confirmUpdate(studentId) {
+            return confirm("Are you sure you want to update the fee record for Student ID: " + studentId + "?");
+        }
+    </script>
+</body>
+</html>

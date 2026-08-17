@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Calendar 2026 - 2027 | S.S.V. Public School</title>
+    
+    <link href="/Assest/Css/Style.css" rel="stylesheet">
+    <link href="/Assest/Css/responsive.css" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .ssv-discipline-section {
+            background: rgba(216, 229, 248, 0.603) !important;
+            padding: 45px 0;
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            color: var(--text-dark, #333333);
+        }
+
+        .ssv-discipline-tag {
+            display: inline-block;
+            background: none;
+            color: #fac004;
+            border: 2px solid #fac004;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .ssv-discipline-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        /* .ssv-discipline-divider {
+            width: 640px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--imperial-gold, #d4af37), var(--gold-hover, #aa8c2c));
+            margin: 0 auto 2rem;
+            border-radius: 2px;
+        } */
+
+        .ssv-discipline-intro {
+            font-size: 1.15rem;
+            color:  #ffffffff;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .ssv-discipline-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 3.5rem;
+            box-shadow: 0 10px 18px rgb(66 96 137 / 53%);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .ssv-discipline-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--imperial-gold, #d4af37);
+        }
+
+        .section-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--oxford-navy, #0a192f);
+            border-left: 4px solid var(--imperial-gold, #d4af37);
+            padding-left: 12px;
+            margin: 30px 0 20px 0;
+        }
+
+        .custom-table {
+            margin: 0 !important;
+            width: 100%;
+        }
+
+        .custom-table thead {
+            background-color: var(--oxford-navy, #0a192f);
+            color: #ffffff;
+        }
+
+        .custom-table thead th {
+            padding: 16px 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            border: 1px solid rgb(166 168 171 / 80%);
+            color: #000000;
+        }
+
+        .custom-table tbody td {
+            padding: 14px 20px;
+            color: var(--text-dark, #333333);
+            font-weight: 500;
+            font-size: 14px;
+            border: 1px solid rgb(166 168 171 / 80%);
+            border-bottom: 1px solid rgb(166 168 171 / 80%);
+            vertical-align: middle;
+        }
+
+        .custom-table tbody tr:hover td {
+            background-color: #F1F5F9;
+        }
+
+        .badge-term {
+            background-color: #E0F2FE;
+            color: #0369A1;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+
+        .badge-exam {
+            background-color: #FEF3C7;
+            color: #B45309;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+
+        .btn-download {
+            background-color: var(--imperial-gold, #d4af37);
+            color: var(--oxford-navy, #0a192f);
+            font-weight: 700;
+            border-radius: 30px;
+            padding: 10px 24px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-download:hover {
+            background-color: #b89528;
+            color: #ffffff;
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .ssv-discipline-card {
+                box-shadow: none;
+                border: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ssv-discipline-title { font-size: 2.2rem; }
+            .ssv-discipline-card { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Logo Navbar -->
+    <nav class="navbar navbar-expand-lg" style="background-color: white;">
+        <div class="container justify-content-center">
+                <a class="navbar-brand" href="/">
+                    <img src="/Assest/Image/home-page/trayo-shri.png" alt="logo" width="auto" height="80" style="object-fit: contain;">
+                </a>
+        </div>
+    </nav>
+
+  
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div class="container">
+            <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#mainHeaderNavbar" aria-controls="mainHeaderNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Links Right Aligned -->
+            <div class="collapse navbar-collapse justify-content-end px-3" id="mainHeaderNavbar">
+                <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link"  href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/history-of-ssv.html">History of S.S.V School</a></li>
+                            <li><a class="dropdown-item" href="/our-mission-and-vision.html">Our Mission and Vision</a></li>
+                            <li><a class="dropdown-item" href="/our-education-system.html">Our Education System</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Leadership <i class="fa-solid fa-angle-right ms-2 fs-7"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/chairman-message.html">Chairman’s Message</a></li>
+                                    <li><a class="dropdown-item" href="/vice-president-message.html">Vice President’s Message</a></li>
+                                    <li><a class="dropdown-item" href="/manager-message.html">Manager’s message</a></li>
+                                    <li><a class="dropdown-item" href="/principal-message.html">Principal’s Message</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admissions</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/admission-procedure.html">Admission Procedure</a></li>
+                            <li><a class="dropdown-item" href="/admission-syllabus.html">Syllabus of Admission Test</a></li>
+
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Academics</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/academic_calender.html">Academic Calendar</a></li>
+                            <li><a class="dropdown-item" href="/Planner.html">Planner</a></li>
+
+                            <li><a class="dropdown-item" href="/school-book-timetable.html">School Book – Time Table</a></li>
+                            <li><a class="dropdown-item" href="/teacher-list.html">List of Faculty</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Student Corner</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/school-discipline.html">Discipline</a></li>
+                            <li><a class="dropdown-item" href="/general-rules.html">Rules</a></li>
+                            <li><a class="dropdown-item" href="/attendance.html">Attendance</a></li>
+                            <!-- <li><a class="dropdown-item" href="/timing.html">Timings</a></li> -->
+
+            
+
+                        </ul>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Beyond Curriculum</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/career-counselling-and-guidance.html">Career counselling</a></li>
+                            <li><a class="dropdown-item" href="/sports.html">Sports</a></li>
+                            <li><a class="dropdown-item" href="/visual-and-performing-arts.html">Visual and Performing Arts</a></li>
+                            <li><a class="dropdown-item" href="/skill-education.html">Skill Education</a></li>
+                            <li><a class="dropdown-item" href="/clubs.html">Clubs</a></li>
+
+                            <li><a class="dropdown-item" href="/initiative.html">Initiative</a></li>
+                            <!--<li><a class="dropdown-item" href="/scholarships.html">Scholarships / Honors and Awards</a></li>  -->
+                        </ul>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contact us</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/contact-us.html">Contact us</a></li>
+                            <li><a class="dropdown-item" href="/career.html">Career (Vacancies)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+            
+                        <a class="nav-link" href="/login.html">Login</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mt-0">
+        <section class="ssv-discipline-section">
+            <div class="container">
+                
+                <!-- MAIN HEADER BLOCK -->
+                <div class="row justify-content-center" style="background-color: #1c212bd4; border-radius: 20px; padding: 40px 20px; margin-bottom: 40px;">
+                    <div class="col-lg-9 text-center">
+                        <!-- <span class="ssv-discipline-tag">S.S.V. Public School</span> -->
+                        <h1 class="ssv-discipline-title">Academic Calendar 2026 – 2027</h1>
+                        <div class="ssv-discipline-divider"></div>
+                        <p class="ssv-discipline-intro text-white">
+                            Exams Schedule • Term Structure • Syllabus Bifurcation • Co-Curricular Activities
+                        </p>
+                        <!-- Action Button -->
+                        <div class="no-print mt-4">
+                            <button onclick="window.print()" class="btn-download border-0">
+                                <i class="fa-solid fa-print"></i> Print / Save PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ssv-discipline-card p-4 p-md-5">
+
+                    <!-- SECTION 1: ACADEMIC TERMS & EXAMINATION SCHEDULE -->
+                    <h3 class="section-heading"><i class="fa-solid fa-calendar-check me-2 text-warning"></i> Academic Terms & Examination Schedule</h3>
+                    <div class="table-responsive mb-4 border rounded-4 shadow-sm overflow-hidden">
+                        <table class="table custom-table text-center">
+                            <thead >
+                                <tr>
+                                    <th>Term / Assessment</th>
+                                    <th>Applicable Classes</th>
+                                    <th>Tentative Dates</th>
+                                    <th>Status / Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="badge-term">Term I Begins</span></td>
+                                    <td>Nursery to Class XII</td>
+                                    <td>April 01, 2026</td>
+                                    <td>Academic Session Starts</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-exam">Periodic Test - I (PT-1)</span></td>
+                                    <td>Class I to XII</td>
+                                    <td>July 15 – July 22, 2026</td>
+                                    <td>Pen & Paper Assessment</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-exam">Half-Yearly Examinations</span></td>
+                                    <td>Nursery to Class XII</td>
+                                    <td>September 14 – September 26, 2026</td>
+                                    <td>First Term Evaluation</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-term">Term II Begins</span></td>
+                                    <td>Nursery to Class XII</td>
+                                    <td>October 05, 2026</td>
+                                    <td>Second Term Commencement</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-exam">Periodic Test - II (PT-2)</span></td>
+                                    <td>Class I to IX & XI</td>
+                                    <td>December 07 – December 14, 2026</td>
+                                    <td>Mid-Term Assessment</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-exam">Pre-Board Examinations</span></td>
+                                    <td>Class X & XII</td>
+                                    <td>January 11 – January 22, 2027</td>
+                                    <td>CBSE Board Preparation</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-exam">Annual Examinations</span></td>
+                                    <td>Nursery to IX & XI</td>
+                                    <td>February 22 – March 08, 2027</td>
+                                    <td>Final Session Evaluation</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- SECTION 2: SYLLABUS BIFURCATION OVERVIEW -->
+                    <h3 class="section-heading"><i class="fa-solid fa-book-open me-2 text-warning"></i> Syllabus Bifurcation Plan</h3>
+                    <div class="table-responsive mb-4 border rounded-4 shadow-sm overflow-hidden">
+                        <table class="table custom-table text-center">
+                            <thead>
+                                <tr>
+                                    <th>Phase</th>
+                                    <th>Timeline</th>
+                                    <th>Target Coverage</th>
+                                    <th>Evaluation Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Phase 1</strong></td>
+                                    <td>April 2026 – August 2026</td>
+                                    <td>50% Syllabus Completion</td>
+                                    <td>Evaluated in Half-Yearly Exams</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Phase 2</strong></td>
+                                    <td>October 2026 – December 2026</td>
+                                    <td>Remaining 50% Syllabus Completion</td>
+                                    <td>Evaluated in Pre-Boards / Annuals</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Revision Phase</strong></td>
+                                    <td>January 2027 – February 2027</td>
+                                    <td>Full Syllabus Revision & Mock Tests</td>
+                                    <td>Class Tests & Remedial Classes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- SECTION 3: MONTHLY ACTIVITY & EVENT DATES -->
+                    <h3 class="section-heading"><i class="fa-solid fa-trophy me-2 text-warning"></i> Major Activity & Event Calendar</h3>
+                    <div class="table-responsive border rounded-4 shadow-sm overflow-hidden">
+                        <table class="table custom-table text-center">
+                            <thead>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Event / Activity</th>
+                                    <th>Target Group</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>April 2026</strong></td>
+                                    <td>Orientation Programme & Earth Day Celebration</td>
+                                    <td>All Students</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>May 2026</strong></td>
+                                    <td>Inter-House Cultural Competition & Summer Camp</td>
+                                    <td>Class III to XII</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>July 2026</strong></td>
+                                    <td>Investiture Ceremony & Science Exhibition</td>
+                                    <td>Student Council & Middle/Senior Wing</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>August 2026</strong></td>
+                                    <td>Independence Day Celebration & Patriotic Song Fest</td>
+                                    <td>All Classes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>October 2026</strong></td>
+                                    <td>Annual Sports Meet & Inter-School IT Fest</td>
+                                    <td>All Classes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>November 2026</strong></td>
+                                    <td>Children's Day Carnival & Art Exhibition</td>
+                                    <td>All Classes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>December 2026</strong></td>
+                                    <td>Annual Cultural Function (Annual Day)</td>
+                                    <td>All Classes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>January 2027</strong></td>
+                                    <td>Republic Day Parade & Career Counselling Sessions</td>
+                                    <td>Classes IX to XII</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <h5 class="footer-heading">Shri Sant Vinoba School</h5>
+                    <p class="small text-slate-400 mb-4">
+                        Dedicated to academic distinction, high moral standards, and state-of-the-art technological education since 1960. Affiliated with CBSE, New Delhi.
+                    </p>
+                    <div class="mb-3 small">
+                        <p class="mb-1"><i class="fa-solid fa-location-dot text-warning me-2"></i> Vill-Vaidpura Greater Noida Sec-1, Gautam Buddha Nagar, UP - 203207</p>
+                        <p class="mb-1"><i class="fa-solid fa-phone text-warning me-2"></i> (+91) 120-4110940, 4139900</p>
+                        <p class="mb-0"><i class="fa-solid fa-envelope text-warning me-2"></i> s.s.v_@rediffmail.com</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-heading">Quick Navigation</h5>
+                    <ul class="footer-links">
+                        <li><a href="/skill-education.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> Skill Education</a></li>
+                        <li><a href="/history-of-ssv.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> History</a></li>
+                        <li><a href="/teacher-list.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> List of Faculty</a></li>
+                        <li><a href="/career.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> Career Opportunities</a></li>
+                        <li><a href="/contact-us.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <h5 class="footer-heading">Location Map</h5>
+                    <div class="rounded overflow-hidden border border-secondary mb-3">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.8830632057798!2d77.488034!3d28.6159387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ced0047c764b1%3A0x496dc9cd387eb15d!2sTrayo%20Infotech!5e1!3m2!1sen!2sin!4v1776066030095!5m2!1sen!2sin"
+                                width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center pt-4 mt-5 border-top border-secondary">
+                <p class="small mb-0">&copy; 2026 S.S.V. Public School. All Rights Reserved.</p>
+                <div class="mt-3 mt-sm-0">
+                    <a href="https://www.facebook.com" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.youtube.com" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+</body>
+
+</html>

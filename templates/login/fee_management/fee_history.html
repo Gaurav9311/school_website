@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+<style>
+
+        .container{
+            max-width:1300px;
+            min-height:500px;
+            background:#090b83;
+            margin:50px auto;
+            padding:30px;
+            box-shadow:0 10px 35px black;
+        }
+
+        .table{
+            color:white;
+        }
+
+        .table th,
+        .table td{
+            color:white;
+            background:transparent !important;
+            border:1px solid rgba(255, 255, 255, 0.3) !important;
+        }
+
+        .btn-group-custom {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .action-bar {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .btn-custom {
+            border-radius: 0px !important;
+            font-weight: 500;
+            padding: 8px 16px;
+        }
+        .table-custom th {
+            background-color: rgba(0, 0, 0, 0.2) !important;
+            color: white !important;
+            font-weight: 600;
+        }
+
+        .form-select{
+            width: 140px;
+        }
+        .form-select1{
+            width: 140px;
+            background-color: #4F6DFF; 
+
+        }
+        .form-select1 :hover{
+            background-color:#0D9488;
+        }
+        .form-select2{
+            background-color: #14B8A6;
+        }
+
+</style>
+
+</head>
+
+<body>
+    <div>
+        <div class="container text-white">
+
+            <h1 class="text-center mb-4">
+            Fee History Management
+            </h1>   
+             
+        <div class="action-bar">
+            <div class="btn-group-custom">
+                <!-- <a href="/view_all_history" class="btn btn-info text-white btn-custom">
+                    <i class="fas fa-eye"></i> 
+                    View All Students</a> -->
+                <a href="/export_fee_history" class="btn btn-warning text-dark btn-custom">
+                    <i class="fas fa-file-csv"></i> 
+                    Export CSV</a>
+            </div>
+        
+            <form action="/fee_history_search" method="GET" class="d-flex gap-2 flex-wrap">
+
+                    <!-- Year -->
+                    <select name="years" class="form-select rounded-0 border-0" style="width:120px;" onchange="this.form.submit()">
+                        <option value="">Year</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                    </select>
+
+                    <!-- Class -->
+                    <select name="classes" class="form-select rounded-0 border-0" style="width:140px;" onchange="this.form.submit()">
+                        <option value="">All Classes</option>
+                        <option value="Nursery">Nursery</option>
+                        <option value="LKG">LKG</option>
+                        <option value="UKG">UKG</option>
+                        <option value="Class 1">Class 1</option>
+                        <option value="Class 2">Class 2</option>
+                        <option value="Class 3">Class 3</option>
+                        <option value="Class 4">Class 4</option>
+                        <option value="Class 5">Class 5</option>
+                        <option value="Class 6">Class 6</option>
+                        <option value="Class 7">Class 7</option>
+                        <option value="Class 8">Class 8</option>
+                        <option value="Class 9">Class 9</option>
+                        <option value="Class 10">Class 10</option>
+                        <option value="Class 11">Class 11</option>
+                        <option value="Class 12">Class 12</option>
+                    </select>
+
+                    <!-- Month -->
+                    <select name="months" class="form-select rounded-0 border-0" style="width:140px;" onchange="this.form.submit()">
+                        <option value="">All Months</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+
+                    <!-- Search -->
+                    <input
+                        type="text"
+                        name="search_query"
+                        value="{{ query }}"
+                        class="form-control rounded-0"
+                        placeholder="Search Student"
+                        style="width:220px;">
+
+                    <button type="submit" class="btn btn-primary rounded-0">
+                            Search
+                    </button>
+
+            </form>
+        </div>
+
+            <table class="table table-bordered table-custom">
+
+                <thead>
+
+                    <tr class="text-center ">
+
+                        <th style="width: 40px;">S.no</th>
+                        <th style="width: 70px;">ID No</th>
+                
+                        <th>Student Name</th>
+                        <th>Class</th>
+                        <th>Fee Month</th>
+                        <!-- <th>Total Amount</th> -->
+                        <th>Paid Amount</th>
+                        <th>Payment Date</th>
+                        <th>Payment Mode</th>
+                        <th>Action</th> 
+                    
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    {% for user in payment_history %}
+
+                    <tr class="text-center ">
+
+                        <td>{{ loop.index + ((page-1)*10) }}</td>
+                        <td>{{ user[1] }}</td>
+                        <td>{{ user[2] }}</td>
+                        <td>{{ user[3] }}</td>
+                        <!-- <td>{{ user[3] }}</td> -->
+                        <td>{{user[4]}}</td>
+                        <td>{{ user[5] }}</td>
+                        <td>{{ user[6] }}</td>
+                        <td>{{ user[7] }}</td>
+                        <td class="text-center " style="width: 100px;">
+
+                            <a href="/delete_fee_history/{{ user[0] }}"
+                            class="btn btn-danger btn-sm rounded-0"
+                            onclick="return confirm('Are you sure?')">
+                                Delete
+                            </a>
+                            
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+            <div class="d-flex justify-content-center mt-4 ">
+
+                {% if page > 1 %}
+                    <a href="/?page={{ page-1 }}" class="btn btn-warning me-2 rounded-0">
+                        Previous
+                    </a>
+                {% endif %}
+
+                <span class="btn btn-light rounded-0">
+                    Page {{ page }} of {{ total_pages }}
+                </span>
+
+                {% if page < total_pages %}
+                    <a href="/?page={{ page+1 }}" class="btn btn-success ms-2 rounded-0">
+                        Next
+                    </a>
+                {% endif %}
+
+            </div>
+            
+                <a href="/dashboard.html" class="btn btn-secondary rounded-0">
+                    Back
+                </a>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+       
+

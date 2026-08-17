@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Notices | S.S.V. Public School</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="/Assest/Css/Style.css" rel="stylesheet">
+    <link href="/Assest/Css/responsive.css" rel="stylesheet">
+    <style>
+        .ssv-notice-section {
+            background: rgba(216, 229, 248, 0.603) !important;
+            padding: 80px 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark, #212529);
+        }
+
+        .ssv-notice-tag {
+            display: inline-block;
+            background: none;
+            color: #fac004;
+            border: 2px solid #fac004;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .ssv-notice-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        /* .ssv-notice-divider {
+            width: 480px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--imperial-gold, #fac004), var(--gold-hover, #e0aa03));
+            margin: 0 auto 2rem;
+            border-radius: 2px;
+        } */
+
+        .ssv-notice-intro {
+            font-size: 1.15rem;
+            color: #ffffff;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .ssv-notice-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 18px rgb(66 96 137 / 53%);
+            border: 1px solid  #fac004;
+            border-left: 5px solid var(--imperial-gold, #fac004);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .ssv-notice-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(6, 19, 37, 0.2);
+        }
+
+        .ssv-notice-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--oxford-navy, #0a192f);
+            margin-bottom: 0;
+        }
+
+        .ssv-notice-card p {
+            color: var(--text-muted, #64748b);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .ssv-empty-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 3.5rem;
+            box-shadow: 0 10px 18px rgba(6, 19, 37, 0.15);
+            border: 1px solid var(--card-border, #e2e8f0);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .ssv-notice-title { font-size: 2.2rem; }
+            .ssv-notice-card { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo Navbar -->
+    <nav class="navbar navbar-expand-lg" style="background-color: white;">
+        <div class="container justify-content-center">
+                <a class="navbar-brand" href="/">
+                    <img src="/Assest/Image/home-page/trayo-shri.png" alt="logo" width="auto" height="80" style="object-fit: contain;">
+                </a>
+        </div>
+    </nav>
+
+  
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div class="container">
+            <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#mainHeaderNavbar" aria-controls="mainHeaderNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Links Right Aligned -->
+            <div class="collapse navbar-collapse justify-content-end px-3" id="mainHeaderNavbar">
+                <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link"  href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/history-of-ssv.html">History of S.S.V School</a></li>
+                            <li><a class="dropdown-item" href="/our-mission-and-vision.html">Our Mission and Vision</a></li>
+                            <li><a class="dropdown-item" href="/our-education-system.html">Our Education System</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Leadership <i class="fa-solid fa-angle-right ms-2 fs-7"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/chairman-message.html">Chairman’s Message</a></li>
+                                    <li><a class="dropdown-item" href="/vice-president-message.html">Vice President’s Message</a></li>
+                                    <li><a class="dropdown-item" href="/manager-message.html">Manager’s message</a></li>
+                                    <li><a class="dropdown-item" href="/principal-message.html">Principal’s Message</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admissions</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/admission-procedure.html">Admission Procedure</a></li>
+                            <li><a class="dropdown-item" href="/admission-syllabus.html">Syllabus of Admission Test</a></li>
+
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Academics</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/academic_calender.html">Academic Calendar</a></li>
+                            <li><a class="dropdown-item" href="/Planner.html">Planner</a></li>
+
+                            <li><a class="dropdown-item" href="/school-book-timetable.html">School Book – Time Table</a></li>
+                            <li><a class="dropdown-item" href="/teacher-list.html">List of Faculty</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Student Corner</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/school-discipline.html">Discipline</a></li>
+                            <li><a class="dropdown-item" href="/general-rules.html">Rules</a></li>
+                            <li><a class="dropdown-item" href="/attendance.html">Attendance</a></li>
+                            <!-- <li><a class="dropdown-item" href="/timing.html">Timings</a></li> -->
+
+            
+
+                        </ul>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Beyond Curriculum</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/career-counselling-and-guidance.html">Career counselling</a></li>
+                            <li><a class="dropdown-item" href="/sports.html">Sports</a></li>
+                            <li><a class="dropdown-item" href="/visual-and-performing-arts.html">Visual and Performing Arts</a></li>
+                            <li><a class="dropdown-item" href="/skill-education.html">Skill Education</a></li>
+                            <li><a class="dropdown-item" href="/clubs.html">Clubs</a></li>
+
+                            <li><a class="dropdown-item" href="/initiative.html">Initiative</a></li>
+                            <!--<li><a class="dropdown-item" href="/scholarships.html">Scholarships / Honors and Awards</a></li>  -->
+                        </ul>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contact us</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/contact-us.html">Contact us</a></li>
+                            <li><a class="dropdown-item" href="/career.html">Career (Vacancies)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+            
+                        <a class="nav-link" href="/login.html">Login</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="mt-0">
+    <section class="ssv-notice-section">
+        <div class="container">
+            <!-- MAIN HEADER BLOCK -->
+            <div class="row justify-content-center" style="background-color: #1c212bd4; border-radius: 20px; padding: 30px 0; margin-bottom: 40px;">
+                <div class="col-lg-9 text-center">
+                    <!-- <span class="ssv-notice-tag">
+                        Announcements & Circulars
+                    </span> -->
+                    <h1 class="ssv-notice-title">
+                        Latest School Notices
+                    </h1>
+                    <div class="ssv-notice-divider"></div>
+                    <p class="ssv-notice-intro">
+                        Stay updated with the latest announcements, circulars, and events.
+                    </p>
+                    <div class="mt-3">
+                        <a href="/" class="btn btn-primary mt-3">
+                            <i class="fa-solid fa-arrow-left me-2"></i>Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    {% if notices %}
+                        {% for notice in notices %}
+                        <div class="card ssv-notice-card shadow-sm mb-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+                                    <h4 class="card-title fw-bold mb-0">{{ notice[1] }}</h4>
+                                    <span class="badge bg-secondary text-white font-monospace"><i class="fa-regular fa-calendar-days me-1"></i> {{ notice[3] }}</span>
+                                </div>
+                                <hr>
+                                <p class="card-text text-secondary" style="white-space: pre-wrap; line-height: 1.6;">{{ notice[2] }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        {% if total_pages > 1 %}
+                        <nav class="mt-4" aria-label="Notice pagination">
+                            <ul class="pagination justify-content-center">
+                                {% if page > 1 %}
+                                <li class="page-item">
+                                    <a class="page-link" href="/notice.html?page={{ page - 1 }}">Previous</a>
+                                </li>
+                                {% endif %}
+                                <li class="page-item active">
+                                    <span class="page-link">Page {{ page }} of {{ total_pages }}</span>
+                                </li>
+                                {% if page < total_pages %}
+                                <li class="page-item">
+                                    <a class="page-link" href="/notice.html?page={{ page + 1 }}">Next</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                        {% endif %}
+                    {% else %}
+                        <div class="ssv-empty-card shadow-sm text-center py-5">
+                            <div class="card-body">
+                                <i class="fa-solid fa-bell-slash fa-3x text-muted mb-3"></i>
+                                <h5 class="text-muted">No notices available at the moment.</h5>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <h5 class="footer-heading">Shri Sant Vinoba School</h5>
+                <p class="small text-slate-400 mb-4">
+                    Dedicated to academic distinction, high moral standards, and state-of-the-art technological education since 1960. Affiliated with CBSE, New Delhi.
+                </p>
+                <div class="mb-3 small">
+                    <p class="mb-1"><i class="fa-solid fa-location-dot text-warning me-2"></i> Vill-Vaidpura Greater Noida Sec-1, Gautam Buddha Nagar, UP - 203207</p>
+                    <p class="mb-1"><i class="fa-solid fa-phone text-warning me-2"></i> (+91) 120-4110940, 4139900</p>
+                    <p class="mb-0"><i class="fa-solid fa-envelope text-warning me-2"></i> s.s.v_@rediffmail.com</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <h5 class="footer-heading">Quick Navigation</h5>
+                <ul class="footer-links">
+                    <li><a href="/skill-education.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> Skill Education</a></li>
+                    <li><a href="/history-of-ssv.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> History</a></li>
+                    <li><a href="/teacher-list.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> List of Faculty</a></li>
+                    <li><a href="/career.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> Career Opportunities</a></li>
+                    <li><a href="/contact-us.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <h5 class="footer-heading">Location Map</h5>
+                <div class="rounded overflow-hidden border border-secondary mb-3">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.8830632057798!2d77.488034!3d28.6159387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ced0047c764b1%3A0x496dc9cd387eb15d!2sTrayo%20Infotech!5e1!3m2!1sen!2sin!4v1776066030095!5m2!1sen!2sin"
+                            width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center pt-4 mt-5 border-top border-secondary">
+            <p class="small mb-0">&copy; 2026 S.S.V. Public School. All Rights Reserved.</p>
+            <div class="mt-3 mt-sm-0">
+                <a href="https://www.facebook.com" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

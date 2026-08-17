@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best School in Ghaziabad | CBSE Schools in Ghaziabad | S.S.V. School</title>
+    <meta name="description" content="Looking for the Best CBSE School in Ghaziabad, Uttar Pradesh? S.S.V. Public School offers top academics, holistic development & over 70+ years of excellence.">
+
+    <link href="/Assest/Css/Style.css" rel="stylesheet">
+    <link href="/Assest/Css/responsive.css" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 Pro / Free Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        
+        /* ------------------------------------
+           HERO CINEMATIC BANNER
+        ------------------------------------ */
+        .hero-section {
+            position: relative;
+            background-color: var(--oxford-navy);
+        }
+
+        .hero-carousel .carousel-item {
+            height: 85vh;
+            min-height: 580px;
+            background-color: var(--oxford-navy);
+        }
+
+        .hero-banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(60%);
+            transform: scale(1.05);
+            transition: transform 7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-carousel .carousel-item.active .hero-banner-img {
+            transform: scale(1);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(6, 19, 37, 0.4) 0%, rgba(6, 19, 37, 0.88) 100%);
+        }
+
+        .hero-caption {
+            position: absolute;
+            bottom: 18%;
+            left: 8%;
+            right: 8%;
+            max-width: 850px;
+            z-index: 10;
+            text-align: left;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgb(247 191 9);
+            border: 1px solid var(--imperial-gold);
+            color: #255b0a;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 4.2rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: #ffffff;
+            max-width: 620px;
+            margin-bottom: 35px;
+            font-weight: 500;
+        }
+
+        .btn-gold {
+            background-color: var(--imperial-gold);
+            color: var(--oxford-navy) !important;
+            font-weight: 700;
+            padding: 14px 34px;
+            border-radius: 6px;
+            border: 1px solid var(--imperial-gold);
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition-main);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.25);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-outline-light-custom {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF !important;
+            font-weight: 600;
+            padding: 14px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 12px;
+            transition: var(--transition-main);
+        }
+
+        .btn-outline-light-custom:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #FFFFFF;
+            transform: translateY(-3px);
+        }
+
+        /* ------------------------------------
+           SECTION TITLES & REUSABLE HEADINGS
+        ------------------------------------ */
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        .sec-tag {
+            color: var(--emerald-light);
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .sec-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--oxford-navy);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .sec-title span {
+            color: var(--imperial-gold);
+            /* font-style: italic; */
+        }
+
+        /* ------------------------------------
+           HIGHLIGHT CARDS (ACADEMICS & INFRA)
+        ------------------------------------ */
+        .card-premium {
+            background: #FFFFFF;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+            transition: var(--transition-main);
+            height: 100%;
+        }
+
+        .card-premium:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(11, 29, 58, 0.12);
+            border-color: var(--imperial-gold);
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card-premium:hover .card-img-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .card-category-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--oxford-navy);
+            color: var(--imperial-gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 30px;
+            border: 1px solid var(--imperial-gold);
+        }
+
+        .card-body-custom {
+            padding: 32px;
+        }
+
+        .card-body-custom h3 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--oxford-navy);
+            margin-bottom: 12px;
+        }
+
+        /* ------------------------------------
+           BENTO GRID ABOUT SECTION
+        ------------------------------------ */
+        .bento-card-main {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 45px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 10px 20px rgba(10, 34, 90, 0.03);
+        }
+
+        .feature-icon-box {
+            width: 54px;
+            height: 54px;
+            border-radius: 12px;
+            background: var(--soft-gold);
+            color: var(--imperial-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+
+        .asymmetrical-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(12, 1fr);
+            height: 520px;
+            gap: 16px;
+        }
+
+        .ag-item {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .ag-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-main);
+        }
+
+        .ag-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .ag-1 { grid-column: 1 / 7; grid-row: 1 / 7; }
+        .ag-2 { grid-column: 7 / 13; grid-row: 1 / 8; }
+        .ag-3 { grid-column: 1 / 7; grid-row: 7 / 13; }
+        .ag-4 { grid-column: 7 / 13; grid-row: 8 / 13; }
+
+        /* ------------------------------------
+           STUDENT PORTAL (DARK GLASS APP)
+        ------------------------------------ */
+        .student-portal-wrapper {
+            background: linear-gradient(135deg, var(--oxford-navy) 0%, var(--deep-navy) 100%);
+            border-radius: 28px;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 18px rgb(66 96 137 / 53%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .app-tile {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 18px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: var(--transition-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none !important;
+        }
+
+        .app-tile i {
+            font-size: 2.2rem;
+            color: var(--imperial-gold);
+            transition: transform 0.3s ease;
+        }
+
+        .app-tile span {
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 0.92rem;
+            letter-spacing: 0.2px;
+        }
+
+        .app-tile:hover {
+            background: rgba(212, 175, 55, 0.12);
+            border-color: var(--imperial-gold);
+            transform: translateY(-6px);
+        }
+
+        .app-tile:hover i {
+            transform: scale(1.15);
+        }
+
+        /* ------------------------------------
+           TESTIMONIALS SECTION
+        ------------------------------------ */
+        .testimonial-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 5px 20px rgba(10, 34, 90, 0.514);
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .quote-icon {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: var(--imperial-gold);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: -20px;
+        }
+
+        /* ------------------------------------
+           LEADERSHIP DESK
+        ------------------------------------ */
+        .leadership-section {
+            background-color: var(--oxford-navy);
+            color: #FFFFFF;
+        }
+
+        .leader-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: var(--transition-main);
+            height: 100%;
+        }
+
+        .leader-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--imperial-gold);
+            transform: translateY(-8px);
+        }
+
+        .leader-avatar {
+            width: 85px;
+            height: 85px;
+            background: var(--soft-gold);
+            border: 2px solid var(--imperial-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--imperial-gold);
+            font-size: 2rem;
+            transition: var(--transition-main);
+        }
+
+        .leader-card:hover .leader-avatar {
+            background: var(--imperial-gold);
+            color: var(--oxford-navy);
+        }
+
+        .leader-role {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--imperial-gold);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .leader-name {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+        }
+
+        /* ------------------------------------
+           FOOTER STYLING
+        ------------------------------------ */
+        .site-footer {
+            background-color: #030A14;
+            color: #94A3B8;
+            padding: 80px 0 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 0.9rem;
+        }
+
+        /* .footer-heading {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: #FFFFFF;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 35px;
+            height: 2px;
+            background: var(--imperial-gold);
+        } */
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: var(--transition-main);
+        }
+
+        .footer-links a:hover {
+            color: var(--imperial-gold);
+            padding-left: 6px;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: var(--transition-main);
+        }
+
+        .social-btn:hover {
+            background: var(--imperial-gold);
+            color: var(--oxford-navy);
+            transform: translateY(-3px);
+        }
+
+        /* Floating CTA Announcement Button */
+        .floating-announcement {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 999;
+        }
+
+        .floating-announcement a {
+            background: #990000;
+            color: #FFFFFF;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(153, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(153, 0, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(153, 0, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(153, 0, 0, 0); }
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .hero-title { font-size: 2.8rem; }
+            .asymmetrical-grid { height: auto; grid-template-columns: 1fr; display: flex; flex-direction: column; }
+            .ag-item { height: 250px; }
+            .student-portal-wrapper { padding: 35px 20px; }
+        }
+ 
+    </style>
+</head>
+
+<body>
+    <!-- Logo Navbar -->
+    <nav class="navbar navbar-expand-lg" style="background-color: white;">
+        <div class="container justify-content-center">
+                <a class="navbar-brand" href="/">
+                    <img src="/Assest/Image/home-page/trayo-shri.png" alt="logo" width="auto" height="80" style="object-fit: contain;">
+                </a>
+        </div>
+    </nav>
+
+  
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div class="container">
+            <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#mainHeaderNavbar" aria-controls="mainHeaderNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Links Right Aligned -->
+            <div class="collapse navbar-collapse justify-content-end px-3" id="mainHeaderNavbar">
+                <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link"  href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/history-of-ssv.html">History of S.S.V School</a></li>
+                            <li><a class="dropdown-item" href="/our-mission-and-vision.html">Our Mission and Vision</a></li>
+                            <li><a class="dropdown-item" href="/our-education-system.html">Our Education System</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Leadership <i class="fa-solid fa-angle-right ms-2 fs-7"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/chairman-message.html">Chairman’s Message</a></li>
+                                    <li><a class="dropdown-item" href="/vice-president-message.html">Vice President’s Message</a></li>
+                                    <li><a class="dropdown-item" href="/manager-message.html">Manager’s message</a></li>
+                                    <li><a class="dropdown-item" href="/principal-message.html">Principal’s Message</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admissions</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/admission-procedure.html">Admission Procedure</a></li>
+                            <li><a class="dropdown-item" href="/admission-syllabus.html">Syllabus of Admission Test</a></li>
+
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Academics</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/academic_calender.html">Academic Calendar</a></li>
+                            <li><a class="dropdown-item" href="/Planner.html">Planner</a></li>
+
+                            <li><a class="dropdown-item" href="/school-book-timetable.html">School Book – Time Table</a></li>
+                            <li><a class="dropdown-item" href="/teacher-list.html">List of Faculty</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Student Corner</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/school-discipline.html">Discipline</a></li>
+                            <li><a class="dropdown-item" href="/general-rules.html">Rules</a></li>
+                            <li><a class="dropdown-item" href="/attendance.html">Attendance</a></li>
+                            <!-- <li><a class="dropdown-item" href="/timing.html">Timings</a></li> -->
+
+            
+
+                        </ul>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Beyond Curriculum</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/career-counselling-and-guidance.html">Career counselling</a></li>
+                            <li><a class="dropdown-item" href="/sports.html">Sports</a></li>
+                            <li><a class="dropdown-item" href="/visual-and-performing-arts.html">Visual and Performing Arts</a></li>
+                            <li><a class="dropdown-item" href="/skill-education.html">Skill Education</a></li>
+                            <li><a class="dropdown-item" href="/clubs.html">Clubs</a></li>
+
+                            <li><a class="dropdown-item" href="/initiative.html">Initiative</a></li>
+                            <!--<li><a class="dropdown-item" href="/scholarships.html">Scholarships / Honors and Awards</a></li>  -->
+                        </ul>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contact us</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/contact-us.html">Contact us</a></li>
+                            <li><a class="dropdown-item" href="/career.html">Career (Vacancies)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+            
+                        <a class="nav-link" href="/login.html">Login</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- MAIN MODERN NAVIGATION BAR -->
+
+
+    <!-- 1. HERO CAROUSEL BANNER -->
+    <section class="hero-section">
+        <div id="heroSlider" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                
+                <div class="carousel-item active" data-bs-interval="6000">
+                    <div class="hero-overlay"></div>
+                    <img src="/WebAssets/banner-image/baneer-1.jpg" class="hero-banner-img" alt="S.S.V. School Campus">
+                    <div class="hero-caption">
+                        <div class="hero-badge"><i class="fa-solid fa-award"></i> Premier Educational Legacy Since 1960</div>
+                        <h1 class="hero-title">Shri Sant Vinoba Public School</h1>
+                        <p class="hero-description">Nurturing scholastic distinction, moral leadership, and analytical minds through modern world-class learning infrastructure.</p>
+                        <a href="#about-section" class="btn-gold">Discover Campus</a>
+                        <a href="/admission-procedure.html" class="btn-outline-light-custom">Admissions 2026-27</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item" data-bs-interval="6000">
+                    <div class="hero-overlay"></div>
+                    <img src="/WebAssets/banner-image/baneer-1.jpg" class="hero-banner-img" alt="Digital Classrooms">
+                    <div class="hero-caption">
+                        <div class="hero-badge"><i class="fa-solid fa-laptop-code"></i> Innovation & STEM Learning</div>
+                        <h1 class="hero-title">Future-Ready Smart Classrooms</h1>
+                        <p class="hero-description">Merging traditional value frameworks with cutting-edge digital infrastructure and interactive multimedia labs.</p>
+                        <a href="/atl-robotics.html" class="btn-gold">Explore STEM Labs</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. CAMPUS HIGHLIGHTS & UPDATES -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="sec-tag">Academic Facilities</span>
+                <h2 class="sec-title">World-Class <span>Campus Infrastructure</span></h2>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Smart Library -->
+                <div class="col-lg-6">
+                    <div class="card-premium">
+                        <div class="card-img-wrapper">
+                            <span class="card-category-badge">Resource Hub</span>
+                            <img src="/Assest/Image/home-page/Smart-Library.webp" alt="Smart Library Hub" loading="lazy">
+                        </div>
+                        <div class="card-body-custom">
+                            <h3>Tech-Enabled Smart Library</h3>
+                            <p class="text-muted small mb-2">
+                                Offering extensive repository access to e-books, research journals, and quiet reading suites to cultivate inquisitive minds and continuous learning habits.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smart Classes -->
+                <div class="col-lg-6">
+                    <div class="card-premium">
+                        <div class="card-img-wrapper">
+                            <span class="card-category-badge">Digital Learning</span>
+                            <img src="/Assest/Image/home-page/smart-classes.jpg" alt="Smart Classes System" loading="lazy">
+                        </div>
+                        <div class="card-body-custom">
+                            <h3>Interactive Smart Suites</h3>
+                            <p class="text-muted small mb-4">
+                                Empowered with 4K touch-enabled boards and immersive visual tools designed to enhance active participation, cognitive reasoning, and overall retention.
+                            </p>
+                            <!-- <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                                <span class="text-muted small"><i class="far fa-calendar-alt me-2 text-warning"></i>Updated Session 2026</span>
+                                <a href="#" class="text-dark fw-bold text-decoration-none small">Learn More <i class="fas fa-arrow-right ms-1 text-warning"></i></a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT US & BENTO MESH GALLERY -->
+    <section id="about-section" class="section-padding" style="background: #03493121;">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="bento-card-main">
+                        <span class="sec-tag">Our Foundational Values</span>
+                        <h2 class="sec-title mb-4">Welcome to <span>S.S.V. Public School</span></h2>
+                        <p class="text-muted mb-4">
+                            Established in 1960, Shri Sant Vinoba School stands as a benchmark institution in Uttar Pradesh. We integrate moral discipline with technical excellence to cultivate global leaders.
+                        </p>
+
+                        <div class="d-flex gap-3 mb-4">
+                            <div class="feature-icon-box"><i class="fa-solid fa-compass"></i></div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Our Core Mission</h5>
+                                <p class="text-muted small m-0">To deliver value-centric holistic education driven by analytical thinking and inclusive cultural values.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-3 mb-4">
+                            <div class="feature-icon-box"><i class="fa-solid fa-eye"></i></div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Our Institutional Vision</h5>
+                                <p class="text-muted small m-0">To consistently rank among top CBSE schools by fostering continuous academic innovation.</p>
+                            </div>
+                        </div>
+
+                        <a href="/history-of-ssv.html" class="btn-gold mt-2">Explore Our History</a>
+                    </div>
+                </div>
+
+                <!-- Bento Gallery Grid -->
+                <div class="col-lg-6">
+                    <div class="asymmetrical-grid">
+                        <div class="ag-item ag-1"><img src="/Assest/Image/home-page/img1.png" alt="Campus View"></div>
+                        <div class="ag-item ag-2"><img src="/Assest/Image/home-page/Imgl.jpg" alt="Science Lab"></div>
+                        <div class="ag-item ag-3"><img src="/Assest/Image/home-page/Imgp.jpg" alt="Sports Grounds"></div>
+                        <div class="ag-item ag-4"><img src="/Assest/Image/home-page/Img4.jpg" alt="Cultural Activities"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. STUDENT PORTAL UTILITY APP LAUNCHER -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="student-portal-wrapper">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-4">
+                        <span class="text-warning text-uppercase fw-bold tracking-wider small">Unified Digital Ecosystem</span>
+                        <h2 class="text-white display-6 fw-bold mt-2 mb-3 sec-title">Student & Parent Portal</h2>
+                        <p class="text-white-50 small mb-0">
+                            Access online fee payment, academic performance metrics, digital library catalogues, and class timetables with seamless security.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <div class="row g-3">
+                            <div class="col-6 col-sm-4">
+                                <a href="/notice.html" class="app-tile">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>Notice</span>
+                                </a>
+                            </div>
+                            <div class="col-6 col-sm-4">
+                                <a href="/school-book-timetable.html" class="app-tile">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>Timetable</span>
+                                </a>
+                            </div>
+                            <div class="col-6 col-sm-4">
+                                <a href="/admission-syllabus.html" class="app-tile">
+                                    <i class="fa-solid fa-file-lines"></i>
+                                    <span>Admission & Syllabus</span>
+                                </a>
+                            </div>
+                            <div class="col-6 col-sm-4">
+                                <a href="/teacher-list.html" class="app-tile">
+                                    <i class="fa-solid fa-chalkboard-user"></i>
+                                    <span>Faculty List</span>
+                                </a>
+                            </div>
+                            <div class="col-6 col-sm-4">
+                                <a href="/Planner.html" class="app-tile">
+                                    <i class="fa-solid fa-calendar-check"></i>
+                                    <span>Planner</span>
+                                </a>
+                            </div>
+                            <div class="col-6 col-sm-4">
+                                <a href="/academic_calender.html" class="app-tile">
+                                    <i class="fa-solid fa-calendar-check"></i>
+                                    <span>Academic Calendar</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PARENTS TESTIMONIALS -->
+    <section class="section-padding " style="background: #8dc3b069;">
+        <div class="container">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="sec-tag">Voices of Trust</span>
+                <h2 class="sec-title">What Our <span>Parents Say</span></h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">“</div>
+                        <p class="text-muted italic small mb-4">
+                            "We offer our sincere gratitude to S.S.V School for the outstanding academic guidance provided to our daughter. The teachers go above and beyond."
+                        </p>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top">
+                            <img src="/Assest/Image/home-page/parents-say-image.png" style="width: 50px; height: 50px; border-radius: 50%;" alt="Parent Avatar">
+                            <div>
+                                <h6 class="m-0 fw-bold">Mr. Deepak Thakur</h6>
+                                <small class="text-muted">Father of Tamanna Thakur (X-B)</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">“</div>
+                        <p class="text-muted italic small mb-4">
+                            "I am immensely satisfied with the infrastructure and cooperative management. S.S.V. Public School provides a safe and inspiring atmosphere."
+                        </p>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top">
+                            <img src="/Assest/Image/home-page/parents-say-image.png" style="width: 50px; height: 50px; border-radius: 50%;" alt="Parent Avatar">
+                            <div>
+                                <h6 class="m-0 fw-bold">Mrs. Tanvi Tyagi</h6>
+                                <small class="text-muted">Mother of Vedansh Tyagi (VII-A)</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">“</div>
+                        <p class="text-muted italic small mb-4">
+                            "Top-notch CCTV security metrics, efficient bus tracking systems, and highly qualified board educators make it the best school in Ghaziabad."
+                        </p>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top">
+                            <img src="/Assest/Image/home-page/parents-say-image.png" style="width: 50px; height: 50px; border-radius: 50%;" alt="Parent Avatar">
+                            <div>
+                                <h6 class="m-0 fw-bold">Mr. Pravindra Srivastava</h6>
+                                <small class="text-muted">Father of Vaishnavi (IX-D)</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. LEADERSHIP DESK -->
+    <section class="section-padding leadership-section">
+        <div class="container">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <span class="sec-tag text-warning">Visionary Leadership</span>
+                <h2 class="sec-title text-white">Our Executive <span>Leadership Desk</span></h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="leader-card">
+                        <div class="leader-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                        <span class="leader-role">Chairman Desk</span>
+                        <h4 class="leader-name">Executive Council</h4>
+                        <p class="text-white-50 small mb-0">"Pioneering academic excellence to align educational standards with dynamic future innovations."</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="leader-card">
+                        <div class="leader-avatar"><i class="fa-solid fa-user-gear"></i></div>
+                        <span class="leader-role">Management Desk</span>
+                        <h4 class="leader-name">Operations Manager</h4>
+                        <p class="text-white-50 small mb-0">"Ensuring pristine resource deployment and highly secure infrastructure operations daily."</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="leader-card">
+                        <div class="leader-avatar"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <span class="leader-role">Academic Chair</span>
+                        <h4 class="leader-name">School Principal</h4>
+                        <p class="text-white-50 small mb-0">"Nurturing dynamic student potential through moral values, analytical precision, and discipline."</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="leader-card">
+                        <div class="leader-avatar"><i class="fa-solid fa-user-shield"></i></div>
+                        <span class="leader-role">Administration</span>
+                        <h4 class="leader-name">Vice Principal</h4>
+                        <p class="text-white-50 small mb-0">"Fostering an inclusive, safe, and highly supportive environment for holistic personal growth."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <h5 class="footer-heading">Shri Sant Vinoba School</h5>
+                    <p class="small text-slate-400 mb-4">
+                        Dedicated to academic distinction, high moral standards, and state-of-the-art technological education since 1960. Affiliated with CBSE, New Delhi.
+                    </p>
+                    <div class="mb-3 small">
+                        <p class="mb-1"><i class="fa-solid fa-location-dot text-warning me-2"></i> Vill-Vaidpura Greater Noida Sec-1, Gautam Buddha Nagar, UP - 203207</p>
+                        <p class="mb-1"><i class="fa-solid fa-phone text-warning me-2"></i> (+91) 120-4110940, 4139900</p>
+                        <p class="mb-0"><i class="fa-solid fa-envelope text-warning me-2"></i> s.s.v_@rediffmail.com</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <h5 class="footer-heading">Quick Navigation</h5>
+                    <ul class="footer-links">
+                        <li><a href="/skill-education.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> Skill Education</a></li>
+                        <li><a href="/history-of-ssv.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> History</a></li>
+                        <li><a href="/teacher-list.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> List of Faculty</a></li>
+                        <li><a href="/career.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> Career Opportunities</a></li>
+                        <li><a href="/contact-us.html"><i class="fa-solid fa-angle-right me-2 text-warning"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <h5 class="footer-heading">Location Map</h5>
+                    <div class="rounded overflow-hidden border border-secondary mb-3">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.8830632057798!2d77.488034!3d28.6159387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ced0047c764b1%3A0x496dc9cd387eb15d!2sTrayo%20Infotech!5e1!3m2!1sen!2sin!4v1776066030095!5m2!1sen!2sin"
+                                width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center pt-4 mt-5 border-top border-secondary">
+                <p class="small mb-0">&copy; 2026 S.S.V. Public School. All Rights Reserved.</p>
+                <div class="mt-3 mt-sm-0">
+                    <a href="https://www.facebook.com" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.youtube.com" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- Bootstrap 5 JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const dropdowns = document.querySelectorAll('.custom-navbar .nav-item.dropdown');
+    const submenus = document.querySelectorAll('.dropdown-submenu > a');
+
+    // Main dropdown click logic (Desktop click-lock & switch)
+    dropdowns.forEach(dropdown => {
+        const toggleBtn = dropdown.querySelector('.dropdown-toggle');
+        
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const isAlreadyClicked = dropdown.classList.contains('js-clicked');
+
+                // Baaki saare dropdowns ko close kar dein
+                dropdowns.forEach(item => {
+                    item.classList.remove('js-clicked');
+                    item.classList.remove('show');
+                });
+
+                if (!isAlreadyClicked) {
+                    dropdown.classList.add('js-clicked');
+                }
+            });
+        }
+    });
+
+    // Submenu click support (Khas taur par Mobile/Touch devices ke liye)
+    submenus.forEach(subToggle => {
+        subToggle.addEventListener('click', function (e) {
+            if (window.innerWidth < 992) { // Sirf mobile/tablet par
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const parentSubmenu = this.closest('.dropdown-submenu');
+                const subMenu = parentSubmenu.querySelector('.dropdown-menu');
+                
+                if (subMenu) {
+                    const isVisible = subMenu.style.display === 'block';
+                    // Baaki submenus hide karein
+                    parentSubmenu.parentElement.querySelectorAll('.dropdown-menu').forEach(m => {
+                        if (m !== subMenu) m.style.display = 'none';
+                    });
+                    subMenu.style.display = isVisible ? 'none' : 'block';
+                }
+            }
+        });
+    });
+
+    // Navbar ke bahar kahin bhi click karne par sabhi menus band ho jayein
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.custom-navbar')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('js-clicked');
+                dropdown.classList.remove('show');
+            });
+        }
+    });
+});
+    </script>
+</body>
+
+</html>
