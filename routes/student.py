@@ -130,7 +130,7 @@ def add_new():
 def delete_student(id):
       cursor = conn.cursor()
 
-      cursor.execute("DELETE FROM student WHERE id = %s",(id,))
+      cursor.execute("DELETE FROM student WHERE student_id = %s",(id,))
 
       conn.commit()
       cursor.close()
@@ -141,7 +141,7 @@ def delete_student(id):
 def edit_student(id):
        
        cursor = conn.cursor()
-       cursor.execute("SELECT * FROM student WHERE id=%s",(id,))
+       cursor.execute("SELECT * FROM student WHERE student_id=%s",(id,))
        edit = cursor.fetchone()
        cursor.close()
        return render_template("login/student/edit_student.html",edit = edit)
@@ -236,7 +236,7 @@ def update_student(id):
 @student.route("/view_student_profile.html/<int:id>")       
 def view_student_profile(id):
        cursor = conn.cursor()
-       cursor.execute("SELECT * FROM student WHERE id=%s",(id,))
+       cursor.execute("SELECT * FROM student WHERE student_id=%s",(id,))
        view = cursor.fetchone()
        cursor.close()
        return render_template("login/student/view_student_profile.html", view=view)
