@@ -285,7 +285,15 @@
     </style>
 
 </head>
-
+<!-- Prevent Back Button Cache Script -->
+<script type="text/javascript">
+    window.onpageshow = function(event) {
+        // Agar page back button se navigate hua hai, to force reload karein
+        if (event.persisted || (performance && performance.navigation.type === 2)) {
+            window.location.reload();
+        }
+    };
+</script>
 <body>
     <!-- Logo Navbar -->
     <nav class="navbar navbar-expand-lg" style="background-color: white;">

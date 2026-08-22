@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, jsonify
-from admission import add_admission
+from flask import Blueprint, render_template, jsonify, session, redirect, url_for, make_response
+# from admission import add_admission
 
 website = Blueprint("website", __name__)
 
@@ -18,8 +18,17 @@ def index():
 
 @website.route("/dashboard.html")
 def dashboard():
-    return render_template("login/dashboard.html")
+    # 1. Agar user logged in nahi hai, to direct LOGIN page par bhej do
+    if not session.get("logged_in"):
+        return redirect(url_for("auth.login"))
 
+    # 2. Response ke saath Cache-Control headers set karein
+    response = make_response(render_template("login/dashboard.html"))
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, max-age=0, post-check=0, pre-check=0"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "-1"
+    
+    return response
 
 # ===========================
 # STUDENT RESULT
@@ -109,22 +118,6 @@ def fee_structure():
 def admission_form():
     return render_template("admission/admission-form.html")
 
-@website.route("/add_student", methods=["POST"])
-def add_student():
-
-    try:
-        add_admission()
-
-        return jsonify({
-            "success": True,
-            "message": "Student data submitted successfully"
-        })
-
-    except Exception as e:
-        return jsonify({
-            "success": False,
-            "message": str(e)
-        }), 500
 # ===========================
 # ACADEMICS
 # ===========================

@@ -1,97 +1,78 @@
-from flask import Blueprint, render_template, request, redirect, send_from_directory, abort, Response
-student = Blueprint("student",__name__)
+from flask import Blueprint, render_template, request, redirect, Response, flash
 import io
 import csv
 from database import conn
 
+student = Blueprint("student", __name__)
+
+# Helper Function: Convert empty input strings to float or None
+def parse_numeric(val):
+    if val and val.strip():
+        try:
+            return float(val.strip())
+        except ValueError:
+            return None
+    return None
+
 
 @student.route("/view_student.html")
 def fetchall_all_student():
-    cursor = conn.cursor()
+    return redirect("/Search_student_management")
 
-    page = request.args.get("page", 1, type=int)
-    per_page = 10
-    offset = (page - 1) * per_page
-
-    cursor.execute("SELECT * FROM student LIMIT %s OFFSET %s", (per_page, offset))
-    students = cursor.fetchall()
-
-    cursor.execute("SELECT COUNT(*) FROM student")
-    row = cursor.fetchone()
-    total = row[0] if row else 0
-
-    cursor.close()
-
-    total_pages = (total + per_page - 1) // per_page
-
-    return render_template(
-        "login/student/view_student.html",
-        students=students,
-        page=page,
-        total_students=total,
-        total_pages=total_pages,
-        classes="",
-        section="",
-        session="",
-        query=""
-    )
 
 @student.route("/add_new_student.html")
 def add_new_student():
     return render_template("login/student/add_new_student.html")
 
+
 @student.route("/add_new_student", methods=["POST"])
 def add_new():
-        
-        cursor = conn.cursor()
-        academic_session = request.form["academic_session"]
-        admission_no = request.form["admission_no"]
-        admission_date = request.form["admission_date"]
-        student_class = request.form["class"]
-        section = request.form["section"]
-        roll_no = request.form["roll_no"]
+    cursor = conn.cursor()
+    try:
+        academic_session = request.form.get("academic_session", "")
+        admission_no = request.form.get("admission_no", "")
+        admission_date = request.form.get("admission_date", "")
+        student_class = request.form.get("class", "")
+        section = request.form.get("section", "")
+        roll_no = request.form.get("roll_no", "")
 
-        # Student Personal Details
-        first_name = request.form["first_name"]
-        middle_name = request.form["middle_name"]
-        last_name = request.form["last_name"]
-        date_of_birth = request.form["date_of_birth"]
-        gender = request.form["gender"]
-        blood_group = request.form["blood_group"]
-        category = request.form["category"]
-        religion = request.form["religion"]
-        mother_tongue = request.form["mother_tongue"]
-        nationality = request.form["nationality"]
-        aadhaar_number = request.form["aadhaar_number"]
+        first_name = request.form.get("first_name", "")
+        middle_name = request.form.get("middle_name", "")
+        last_name = request.form.get("last_name", "")
+        date_of_birth = request.form.get("date_of_birth", "")
+        gender = request.form.get("gender", "")
+        blood_group = request.form.get("blood_group", "")
+        category = request.form.get("category", "")
+        religion = request.form.get("religion", "")
+        mother_tongue = request.form.get("mother_tongue", "")
+        nationality = request.form.get("nationality", "")
+        aadhaar_number = request.form.get("aadhaar_number", "")
 
-        # Parents & Contact Details
-        father_name = request.form["father_name"]
-        father_occupation = request.form["father_occupation"]
-        father_phone = request.form["father_phone"]
-        mother_name = request.form["mother_name"]
-        mother_occupation = request.form["mother_occupation"]
-        mother_phone = request.form["mother_phone"]
-        email_address = request.form["parent_email"]
-        annual_income = request.form["annual_income"]
-        emergency_contact = request.form["emergency_contact"]
+        father_name = request.form.get("father_name", "")
+        father_occupation = request.form.get("father_occupation", "")
+        father_phone = request.form.get("father_phone", "")
+        mother_name = request.form.get("mother_name", "")
+        mother_occupation = request.form.get("mother_occupation", "")
+        mother_phone = request.form.get("mother_phone", "")
+        email_address = request.form.get("parent_email", "")
 
-        # Current Address
-        current_address = request.form["present_address"]
-        current_city = request.form["present_city"]
-        current_state = request.form["present_state"]
-        current_pincode = request.form["present_pincode"]
+        annual_income = parse_numeric(request.form.get("annual_income"))
+        emergency_contact = request.form.get("emergency_contact", "")
 
-        # Permanent Address
-        permanent_address = request.form["permanent_address"]
-        permanent_city = request.form["permanent_city"]
-        permanent_state = request.form["permanent_state"]
-        permanent_pincode = request.form["permanent_pincode"]
+        current_address = request.form.get("present_address", "")
+        current_city = request.form.get("present_city", "")
+        current_state = request.form.get("present_state", "")
+        current_pincode = request.form.get("present_pincode", "")
 
-        # Previous Academic History
-        previous_school_name = request.form["previous_school_name"]
-        previous_class = request.form["previous_class"]
-        previous_marks = request.form["previous_marks"]
-        tc_number = request.form["tc_number"]
+        permanent_address = request.form.get("permanent_address", "")
+        permanent_city = request.form.get("permanent_city", "")
+        permanent_state = request.form.get("permanent_state", "")
+        permanent_pincode = request.form.get("permanent_pincode", "")
+
+        previous_school_name = request.form.get("previous_school_name", "")
+        previous_class = request.form.get("previous_class", "")
+        previous_marks = parse_numeric(request.form.get("previous_marks"))
+        tc_number = request.form.get("tc_number", "")
 
         sql = """
             INSERT INTO student (
@@ -117,89 +98,100 @@ def add_new():
             permanent_address, permanent_city, permanent_state, permanent_pincode,
             previous_school_name, previous_class, previous_marks, tc_number
         )
-              
-
 
         cursor.execute(sql, data)
         conn.commit()
+        flash("Student added successfully!", "success")
+    except Exception as e:
+        conn.rollback()
+        flash(f"Error adding student: {str(e)}", "danger")
+    finally:
         cursor.close()
-        return redirect("/view_student.html")
+
+    return redirect("/Search_student_management?submitted=true")
 
 
 @student.route("/delete/<int:id>")
 def delete_student(id):
-      cursor = conn.cursor()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("DELETE FROM student WHERE student_id = %s", (id,))
+        conn.commit()
+        flash("Student deleted successfully!", "success")
+    except Exception as e:
+        conn.rollback()
+        flash(f"Error deleting student: {str(e)}", "danger")
+    finally:
+        cursor.close()
 
-      cursor.execute("DELETE FROM student WHERE student_id = %s",(id,))
-
-      conn.commit()
-      cursor.close()
-      return redirect("/view_student.html")
+    if request.referrer and "Search_student_management" in request.referrer:
+        return redirect(request.referrer)
+    return redirect("/Search_student_management?submitted=true")
 
 
 @student.route("/edit_student.html/<int:id>")
 def edit_student(id):
-       
-       cursor = conn.cursor()
-       cursor.execute("SELECT * FROM student WHERE student_id=%s",(id,))
-       edit = cursor.fetchone()
-       cursor.close()
-       return render_template("login/student/edit_student.html",edit = edit)
+    cursor = conn.cursor()
+    edit = None
+    try:
+        cursor.execute("SELECT * FROM student WHERE student_id=%s", (id,))
+        edit = cursor.fetchone()
+    except Exception as e:
+        flash(f"Error fetching student details: {str(e)}", "danger")
+    finally:
+        cursor.close()
+
+    return render_template("login/student/edit_student.html", edit=edit)
 
 
-
-@student.route("/update_student/<int:id>",methods = ["POST"])
+@student.route("/update_student/<int:id>", methods=["POST"])
 def update_student(id):
-        
-        cursor = conn.cursor()
-        academic_session = request.form["academic_session"]
-        admission_no = request.form["admission_no"]
-        admission_date = request.form["admission_date"]
-        student_class = request.form["class"]
-        section = request.form["section"]
-        roll_no = request.form["roll_no"]
+    cursor = conn.cursor()
+    try:
+        academic_session = request.form.get("academic_session", "")
+        admission_no = request.form.get("admission_no", "")
+        admission_date = request.form.get("admission_date", "")
+        student_class = request.form.get("class", "")
+        section = request.form.get("section", "")
+        roll_no = request.form.get("roll_no", "")
 
-        # Student Personal Details
-        first_name = request.form["first_name"]
-        middle_name = request.form["middle_name"]
-        last_name = request.form["last_name"]
-        date_of_birth = request.form["date_of_birth"]
-        gender = request.form["gender"]
-        blood_group = request.form["blood_group"]
-        category = request.form["category"]
-        religion = request.form["religion"]
-        mother_tongue = request.form["mother_tongue"]
-        nationality = request.form["nationality"]
-        aadhaar_number = request.form["aadhaar_number"]
+        first_name = request.form.get("first_name", "")
+        middle_name = request.form.get("middle_name", "")
+        last_name = request.form.get("last_name", "")
+        date_of_birth = request.form.get("date_of_birth", "")
+        gender = request.form.get("gender", "")
+        blood_group = request.form.get("blood_group", "")
+        category = request.form.get("category", "")
+        religion = request.form.get("religion", "")
+        mother_tongue = request.form.get("mother_tongue", "")
+        nationality = request.form.get("nationality", "")
+        aadhaar_number = request.form.get("aadhaar_number", "")
 
-        # Parents & Contact Details
-        father_name = request.form["father_name"]
-        father_occupation = request.form["father_occupation"]
-        father_phone = request.form["father_phone"]
-        mother_name = request.form["mother_name"]
-        mother_occupation = request.form["mother_occupation"]
-        mother_phone = request.form["mother_phone"]
-        email_address = request.form["parent_email"]
-        annual_income = request.form["annual_income"]
-        emergency_contact = request.form["emergency_contact"]
+        father_name = request.form.get("father_name", "")
+        father_occupation = request.form.get("father_occupation", "")
+        father_phone = request.form.get("father_phone", "")
+        mother_name = request.form.get("mother_name", "")
+        mother_occupation = request.form.get("mother_occupation", "")
+        mother_phone = request.form.get("mother_phone", "")
+        email_address = request.form.get("parent_email", "")
 
-        # Current Address
-        current_address = request.form["present_address"]
-        current_city = request.form["present_city"]
-        current_state = request.form["present_state"]
-        current_pincode = request.form["present_pincode"]
+        annual_income = parse_numeric(request.form.get("annual_income"))
+        emergency_contact = request.form.get("emergency_contact", "")
 
-        # Permanent Address
-        permanent_address = request.form["permanent_address"]
-        permanent_city = request.form["permanent_city"]
-        permanent_state = request.form["permanent_state"]
-        permanent_pincode = request.form["permanent_pincode"]
+        current_address = request.form.get("present_address", "")
+        current_city = request.form.get("present_city", "")
+        current_state = request.form.get("present_state", "")
+        current_pincode = request.form.get("present_pincode", "")
 
-        # Previous Academic History
-        previous_school_name = request.form["previous_school_name"]
-        previous_class = request.form["previous_class"]
-        previous_marks = request.form["previous_marks"]
-        tc_number = request.form["tc_number"]
+        permanent_address = request.form.get("permanent_address", "")
+        permanent_city = request.form.get("permanent_city", "")
+        permanent_state = request.form.get("permanent_state", "")
+        permanent_pincode = request.form.get("permanent_pincode", "")
+
+        previous_school_name = request.form.get("previous_school_name", "")
+        previous_class = request.form.get("previous_class", "")
+        previous_marks = parse_numeric(request.form.get("previous_marks"))
+        tc_number = request.form.get("tc_number", "")
 
         sql = """
             UPDATE student SET 
@@ -210,8 +202,8 @@ def update_student(id):
                 mother_occupation = %s, mother_phone = %s, email_address = %s, annual_income = %s, emergency_contact = %s,
                 current_address = %s, current_city = %s, current_state = %s, current_pincode = %s,
                 permanent_address = %s, permanent_city = %s, permanent_state = %s, permanent_pincode = %s,
-                previous_school_name = %s, previous_class = %s, previous_marks = %s, tc_number = %s WHERE id = %s
-            
+                previous_school_name = %s, previous_class = %s, previous_marks = %s, tc_number = %s 
+            WHERE student_id = %s
         """
 
         data = (
@@ -222,130 +214,111 @@ def update_student(id):
             mother_occupation, mother_phone, email_address, annual_income, emergency_contact,
             current_address, current_city, current_state, current_pincode,
             permanent_address, permanent_city, permanent_state, permanent_pincode,
-            previous_school_name, previous_class, previous_marks, tc_number,id
+            previous_school_name, previous_class, previous_marks, tc_number, id
         )
-              
-
 
         cursor.execute(sql, data)
         conn.commit()
+        flash("Student updated successfully!", "success")
+    except Exception as e:
+        conn.rollback()
+        flash(f"Error updating student: {str(e)}", "danger")
+    finally:
         cursor.close()
-        return redirect("/view_student.html")
+
+    return redirect("/Search_student_management?submitted=true")
 
 
 @student.route("/view_student_profile.html/<int:id>")       
 def view_student_profile(id):
-       cursor = conn.cursor()
-       cursor.execute("SELECT * FROM student WHERE student_id=%s",(id,))
-       view = cursor.fetchone()
-       cursor.close()
-       return render_template("login/student/view_student_profile.html", view=view)
+    cursor = conn.cursor()
+    view = None
+    try:
+        cursor.execute("SELECT * FROM student WHERE student_id=%s", (id,))
+        view = cursor.fetchone()
+    except Exception as e:
+        flash(f"Error loading profile: {str(e)}", "danger")
+    finally:
+        cursor.close()
+
+    return render_template("login/student/view_student_profile.html", view=view)
 
 
-@student.route("/student/export")
-@student.route("/students/export")
-def export_student():
-        cursor = conn.cursor()
+def build_filter_query(classes, section, session, query_text):
+    sql = "SELECT * FROM student WHERE 1=1"
+    values = []
+
+    if classes and classes.strip() != "":
+        sql += " AND TRIM(student_class) = %s"
+        values.append(classes.strip())
+
+    if section and section.strip() != "":
+        sql += " AND TRIM(section) = %s"
+        values.append(section.strip())
+
+    if session and session.strip() != "":
+        s_val = session.strip()
+        short_session = s_val
+        if len(s_val) == 9 and "-" in s_val:
+            parts = s_val.split("-")
+            short_session = f"{parts[0]}-{parts[1][-2:]}"
+
+        sql += " AND (TRIM(academic_session) = %s OR TRIM(academic_session) = %s)"
+        values.extend([s_val, short_session])
+
+    if query_text and query_text.strip() != "":
+        q = f"%{query_text.strip()}%"
+        sql += " AND (first_name LIKE %s OR last_name LIKE %s OR father_name LIKE %s OR admission_no LIKE %s)"
+        values.extend([q, q, q, q])
+
+    return sql, values
 
 
-        cursor.execute("SELECT * FROM student")
-        data = cursor.fetchall()
-
-        output = io.StringIO()
-
-        writer = csv.writer(output)
-
-        writer.writerow(["database id","academic_sessio"," admission_no","admission_date","student_class","section","roll_no","first_name","middle_name", 
-        "last_name","date_of_birth", "gender","blood_group","category","religion","mother_tongue","nationality","aadhaar_number","father_name", 
-        "father_occupation","father_phone","mother_name","mother_occupation","mother_phone","email_address","annual_income","emergency_contact",
-        "current_address","current_city","current_state","current_pincode","permanent_address","permanent_city","permanent_state","permanent_pincode",
-        "previous_school_name","previous_class","previous_marks","tc_number"])
-        writer.writerows(data)
-        output.seek(0)
-
-        return Response(
-            output.getvalue(),
-            mimetype="text/csv",
-            headers={"Content-Disposition": "attachment; filename=student.csv"}
-        )
-
-
-        # return export_student()
 @student.route("/Search_student_management", methods=["GET"])
 def Search_student_management():
-    cursor = conn.cursor()
-
+    submitted = request.args.get("submitted", "").strip()
     section = request.args.get("section", "").strip()
     classes = request.args.get("classes", "").strip()
     session = request.args.get("session", "").strip()
     query_text = request.args.get("query", "").strip()
 
-    page = int(request.args.get("page", 1))
+    try:
+        page = int(request.args.get("page", 1))
+    except ValueError:
+        page = 1
+
     per_page = 10
     offset = (page - 1) * per_page
 
-    # Debug
-    print(f"Class search: '{classes}'")
+    students = []
+    total = 0
+    total_pages = 1
 
-    # First, let's check what's in the database
-    cursor.execute("SELECT student_class, section, academic_session FROM student LIMIT 10")
-    sample = cursor.fetchall()
-    print(f"Sample data: {sample}")
+    if submitted == "true":
+        cursor = conn.cursor()
+        try:
+            sql, values = build_filter_query(classes, section, session, query_text)
 
-    # Build query dynamically
-    sql = "SELECT * FROM student WHERE 1=1"
-    values = []
+            count_sql = sql.replace("SELECT *", "SELECT COUNT(*)", 1)
+            cursor.execute(count_sql, tuple(values))
+            row = cursor.fetchone()
+            total = row[0] if row else 0
+            total_pages = max(1, (total + per_page - 1) // per_page)
 
-    if classes:
-        # Try multiple approaches
-        sql += " AND ("
-        sql += " student_class = %s"  # Exact match
-        sql += " OR CAST(student_class AS CHAR) LIKE %s"  # Convert to string and match
-        sql += " OR student_class LIKE %s"
-        sql += ")"
-        values.append(classes)
-        values.append(f"%{classes}%")
-        values.append(f"%{classes}%")
-    
-    if section:
-        sql += " AND section = %s"
-        values.append(section)
-    
-    if session:
-        sql += " AND academic_session = %s"
-        values.append(session)
-    
-    if query_text:
-        sql += """ AND (
-            first_name LIKE %s OR 
-            last_name LIKE %s OR 
-            father_name LIKE %s
-        )"""
-        values.append(f"%{query_text}%")
-        values.append(f"%{query_text}%")
-        values.append(f"%{query_text}%")
+            paginated_sql = sql + " ORDER BY student_id DESC LIMIT %s OFFSET %s"
+            final_values = tuple(values) + (per_page, offset)
 
-    print(f"Final SQL: {sql}")
-    print(f"Values: {values}")
-
-    # Get total count
-    count_sql = sql.replace("SELECT *", "SELECT COUNT(*)", 1)
-    cursor.execute(count_sql, tuple(values))
-    row = cursor.fetchone()
-    total = row[0] if row else 0
-    total_pages = max(1, (total + per_page - 1) // per_page)
-
-    # Execute paginated query
-    paginated_sql = sql + " ORDER BY id DESC LIMIT %s OFFSET %s"
-    final_values = tuple(values) + (per_page, offset)
-    
-    cursor.execute(paginated_sql, final_values)
-    students = cursor.fetchall()
-    cursor.close()
+            cursor.execute(paginated_sql, final_values)
+            students = cursor.fetchall()
+        except Exception as e:
+            flash(f"Error fetching student records: {str(e)}", "danger")
+        finally:
+            cursor.close()
 
     return render_template(
         "login/student/view_student.html",
         students=students,
+        submitted=submitted,
         page=page,
         total_pages=total_pages,
         total_students=total,
@@ -354,3 +327,51 @@ def Search_student_management():
         session=session,
         query=query_text
     )
+
+
+@student.route("/students/export")
+def export_student():
+    cursor = conn.cursor()
+    try:
+        section = request.args.get("section", "").strip()
+        classes = request.args.get("classes", "").strip()
+        session = request.args.get("session", "").strip()
+        query_text = request.args.get("query", "").strip()
+
+        sql, values = build_filter_query(classes, section, session, query_text)
+        
+        cursor.execute(sql, tuple(values))
+        data = cursor.fetchall()
+
+        output = io.StringIO()
+        writer = csv.writer(output)
+
+        writer.writerow([
+            "database id", "academic_session", "admission_no", "admission_date", "student_class", "section", "roll_no",
+            "first_name", "middle_name", "last_name", "date_of_birth", "gender", "blood_group", "category", "religion",
+            "mother_tongue", "nationality", "aadhaar_number", "father_name", "father_occupation", "father_phone",
+            "mother_name", "mother_occupation", "mother_phone", "email_address", "annual_income", "emergency_contact",
+            "current_address", "current_city", "current_state", "current_pincode", "permanent_address", "permanent_city",
+            "permanent_state", "permanent_pincode", "previous_school_name", "previous_class", "previous_marks", "tc_number"
+        ])
+        
+        formatted_data = []
+        for row in data:
+            row_list = list(row)
+            if len(row_list) > 17 and row_list[17]:
+                row_list[17] = f'="{str(row_list[17]).strip()}"'
+            formatted_data.append(row_list)
+
+        writer.writerows(formatted_data)
+        output.seek(0)
+
+        return Response(
+            output.getvalue(),
+            mimetype="text/csv",
+            headers={"Content-Disposition": "attachment; filename=filtered_students.csv"}
+        )
+    except Exception as e:
+        flash(f"Error exporting data: {str(e)}", "danger")
+        return redirect("/Search_student_management?submitted=true")
+    finally:
+        cursor.close()
