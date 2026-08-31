@@ -1,13 +1,5 @@
 
-from flask import (
-    Blueprint,
-    render_template,
-    request,
-    redirect,
-    Response,
-    flash,
-)
-
+from flask import Blueprint,render_template,request,redirect,Response,flash
 import io
 import csv
 import re

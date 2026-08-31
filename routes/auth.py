@@ -1,14 +1,5 @@
 
-from flask import (
-    Blueprint,
-    render_template,
-    request,
-    redirect,
-    session,
-    url_for,
-    make_response,
-)
-
+from flask import Blueprint,render_template,request,redirect,session,url_for,make_response
 from functools import wraps
 
 

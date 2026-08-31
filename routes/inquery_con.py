@@ -1,11 +1,5 @@
 
-from flask import (
-    Blueprint,
-    render_template,
-    request,
-    redirect,
-    flash,
-)
+from flask import Blueprint,render_template,request,redirect,flash
 
 import re
 from database import conn
