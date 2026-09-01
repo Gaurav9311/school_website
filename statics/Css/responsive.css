@@ -1,401 +1,974 @@
-@media (max-width: 768px) {
-
- .Notice-section .custom-card {
-
- margin: 15px 0;
- min-height: auto;
- height: auto;
-
-}
-
-.class-time-table-section .container__img-holder {
-
- margin: 10px;
-
-}
-
-}
-
-@media (max-width: 424px) {
-
- .mini-mobile {
-
- flex-wrap: wrap;
- justify-content: center;
-
-}
-
-}
-
-@media (max-width: 768px) {
-
- .event-card img {
-
- height: 250px !important;
-
-}
-
-.Notice-section .custom-card {
-
- min-height: 400px;
- height: 400px;
-
-}
-
-.banner-btn {
-
- margin-bottom: 20px;
-
-}
-
-}
-
-@media (min-width: 576px) {
-
- .custom-background svg {
-
- left: calc(50% - 30rem);
- height: 42.375rem;
-
-}
-
-}
-
-@media only screen and (min-width: 320px) and (max-width: 767px) {
-
- .banner-section img {
-
- width: 130px !important;
- height: 160px !important;
-
-}
-
-.Parents-say-image {
-
- width: 45%;
-
-}
-
-.Parents-say-content {
-
- width: 55%;
-
-}
-
-.Alumni-card-image {
-
- width: 45%;
-
-}
-
-.Alumni-card-content {
-
- width: 55%;
-
-}
-
-.yellow-card {
-
- max-width: 100%;
- height: auto;
-
-}
-
-.red-card {
-
- max-width: 100%;
- height: auto;
-
-}
-
-.section {
-
- padding-top: 30px;
- padding-bottom: 30px;
-
-}
-
-.for-mobile {
-
- margin-top: 20px;
-
-}
-
-.event-card img {
-
- height: 350px;
-
-}
-
-.about-S.S.V School .staggered-container {
-
- margin: 20px 0 auto;
-
-}
-
-.Parents-say-card img {
-
- height: 225px;
-
-}
-
-.social-icon {
-
- justify-content: flex-start;
-
-}
-
-.mission-vission-section h1 {
-
- text-align: center;
-
-}
-
-.mission-vission-section h2 {
-
- text-align: center;
- margin-top: 20px;
-
-}
-
-.mission-vission-section p {
-
- padding-right: 0;
- text-align: center;
-
-}
-
-.Chairman-section .author-des p:nth-child(1) {
-
- padding: 5px 0 0 0;
- text-align: center;
-
-}
-
-.Chairman-section .author-des p:nth-child(2) {
-
- padding: 0;
-
-}
-
-.Coordinators-cards {
-
- border-bottom: 1px solid #eee;
-
-}
-
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-
- .our-leaders-card img {
-
- width: 100%;
- height: auto;
-
-}
-
-.yellow-card {
-
- max-width: 100%;
- height: auto;
-
-}
-
-.red-card {
-
- max-width: 100%;
- height: auto;
-
-}
-
-.section {
-
- padding-top: 30px;
- padding-bottom: 30px;
-
-}
-
-.event-card img {
-
- height: 200px;
-
-}
-
-.about-S.S.V School .card-mission {
-
- flex-direction: column;
-
-}
-
-.about-S.S.V School .card-mission .card-svg {
-
- width: fit-content;
-
-}
-
-.Notice-section .custom-card {
-
- margin: 0;
-
-}
-
-.mission-vission-section p {
-
- padding-right: 0;
-
-}
-
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1024px) {
-
- .our-leaders-card img {
-
- width: 100%;
- height: auto;
-
-}
-
-.blog-section .blog-section-content h2 {
-
- font-size: 24px;
-
-}
-
-.blog-section .blog-section-content:before {
-
- height: 75%;
-
-}
-
-.section {
-
- padding-top: 30px;
- padding-bottom: 30px;
-
-}
-
-.event-card-body {
-
- padding: 0px 2px 0px 5px;
-
-}
-
-.banner-section img {
-
- width: 165px !important;
- height: 200px !important;
-
-}
-
-.event-card img {
-
- width: 200px !important;
- height: 350px !important;
-
-}
-
-}
-
-@media only screen and (min-width: 1441px) and (max-width: 2560px) {
-
- .our-leaders-card img {
-
- width: 100%;
- height: auto;
-
-}
-
-.blog-section .blog-section-content {
-
- padding: 25% 20%;
-
-}
-
-.blog-section .blog-section-content:before {
-
- height: 40%;
-
-}
-
-.event-card-body {
-
- padding: 1% 2%;
-
-}
-
-.banner-slider-section .banner-slider .banner-slider-card img {
-
- height: 300px 
-
-}
-
-}
-
-@media only screen and (min-width:1400px) and (max-width:2560px) {
-
- .navbar-collapse {
-
- flex-grow: 1;
-
-}
-
-.our-leaders-card img {
-
- width: 100%;
- height: auto;
-
-}
-
-}
-
-@media (max-width:480px) {
-
- .our-leaders-card img {
-
- width: 100%;
- height: auto;
-
-}
-
-.blog-section .blog-section-content h2 {
-
- font-size: 20px;
-
-}
-
-.blog-section .blog-section-content:before {
-
- height: 80%;
-
-}
-
-.parents-say-2 .parents-say-card-parent .card-body .post-date p {
-
- text-align: start !important;
-
-}
-
-.parents-say-2 .parents-say-card-parent .card-body {
-
- height: auto !important;
- flex-wrap: wrap;
- justify-content: center;
-
-}
-
-.event-card {
-
- flex-direction: column !important;
-
-}
-
-.event-card img {
-
- width: 100% !important;
- height: auto !important;
-
-}
-
+/* =========================================================
+   COMPREHENSIVE RESPONSIVE DESIGN
+   Mobile First Approach: 320px → 2560px+
+   =========================================================
+*/
+
+/* =========================================================
+   LOGO NAVBAR RESPONSIVE FIX
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem 0 !important;
+    }
+
+    .navbar-brand img {
+        max-height: 50px !important;
+        width: auto !important;
+        height: auto !important;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .navbar-brand img {
+        max-height: 60px !important;
+        width: auto !important;
+        height: auto !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-brand img {
+        max-height: 80px !important;
+        width: auto !important;
+        height: auto !important;
+    }
+}
+
+/* Fix navbar overflow at 1024px */
+@media (min-width: 992px) and (max-width: 1024px) {
+    .custom-navbar .collapse {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+
+    .custom-navbar .navbar-nav {
+        flex-wrap: wrap;
+    }
+
+    .custom-navbar .nav-link {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.85rem;
+    }
+
+    .hero-banner-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .container {
+        max-width: 96%;
+        margin: 0 auto;
+    }
+}
+
+/* =========================================================
+   HERO SECTION RESPONSIVE
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .hero-carousel .carousel-item {
+        height: 50vh;
+        min-height: 300px;
+    }
+
+    .hero-caption {
+        bottom: 10%;
+        left: 5%;
+        right: 5%;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-badge {
+        font-size: 0.7rem;
+        padding: 4px 12px;
+        margin-bottom: 15px;
+    }
+
+    .btn-gold,
+    .btn-outline-light-custom {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+        display: block;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .btn-outline-light-custom {
+        margin-left: 0 !important;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .hero-carousel .carousel-item {
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    .hero-caption {
+        bottom: 15%;
+        left: 5%;
+        right: 5%;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .btn-gold,
+    .btn-outline-light-custom {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hero-carousel .carousel-item {
+        height: 70vh;
+        min-height: 500px;
+    }
+
+    .hero-title {
+        font-size: 3.2rem;
+    }
+
+    .hero-description {
+        font-size: 1.05rem;
+    }
+}
+
+/* =========================================================
+   NAVBAR MOBILE MENU FIX
+   =========================================================
+*/
+@media (max-width: 991px) {
+    .custom-navbar {
+        padding: 0.5rem 0 !important;
+    }
+
+    .custom-navbar .navbar-toggler {
+        border: none;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .custom-navbar .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(11, 29, 58, 0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    .custom-navbar .navbar-collapse {
+        background-color: #ffffff;
+        margin-top: 5px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    .custom-navbar .nav-link {
+        padding: 0.75rem 1.25rem !important;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .custom-navbar .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .custom-navbar .dropdown-menu {
+        background: #f8f8f8 !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        display: none;
+        position: static !important;
+        float: none !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+
+    .custom-navbar .nav-item.dropdown.show > .dropdown-menu {
+        display: block !important;
+    }
+
+    .custom-navbar .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+        margin-left: 1rem;
+        background: #f0f0f0 !important;
+    }
+}
+
+/* =========================================================
+   CARD & GRID RESPONSIVE
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .card-premium {
+        margin-bottom: 20px;
+    }
+
+    .card-img-wrapper {
+        height: 200px;
+    }
+
+    .card-body-custom {
+        padding: 20px;
+    }
+
+    .card-body-custom h3 {
+        font-size: 1.3rem;
+    }
+
+    .bento-card-main {
+        padding: 25px;
+        margin-bottom: 20px;
+    }
+
+    .asymmetrical-grid {
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .ag-1, .ag-2, .ag-3, .ag-4 {
+        grid-column: 1 / -1 !important;
+        grid-row: auto !important;
+        height: 250px;
+    }
+
+    .mission-vision-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    .about-ssv-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .about-ssv-gallery {
+        column-count: 1 !important;
+    }
+
+    .gallery-item {
+        height: auto !important;
+    }
+
+    .gallery-item img {
+        max-height: 300px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .card-img-wrapper {
+        height: 220px;
+    }
+
+    .card-body-custom {
+        padding: 24px;
+    }
+
+    .card-body-custom h3 {
+        font-size: 1.5rem;
+    }
+
+    .asymmetrical-grid {
+        height: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .ag-1 { grid-column: 1 / -1 !important; grid-row: auto !important; }
+    .ag-2 { grid-column: 1 / -1 !important; grid-row: auto !important; }
+    .ag-3 { grid-column: 1 / -1 !important; grid-row: auto !important; }
+    .ag-4 { grid-column: 1 / -1 !important; grid-row: auto !important; }
+
+    .mission-vision-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .about-ssv-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .about-ssv-gallery {
+        column-count: 1 !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .asymmetrical-grid {
+        height: 400px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6, 1fr);
+    }
+
+    .ag-1 { grid-column: 1 / 2; grid-row: 1 / 7; }
+    .ag-2 { grid-column: 2 / 3; grid-row: 1 / 4; }
+    .ag-3 { grid-column: 2 / 3; grid-row: 4 / 7; }
+    .ag-4 { display: none; }
+
+    .about-ssv-gallery {
+        column-count: 2 !important;
+    }
+
+    .mission-vision-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* =========================================================
+   TABLES RESPONSIVE
+   =========================================================
+*/
+@media (max-width: 767px) {
+    .table-responsive {
+        font-size: 0.85rem;
+    }
+
+    table {
+        font-size: 0.75rem;
+    }
+
+    table thead th {
+        padding: 10px 5px !important;
+        font-size: 0.75rem;
+    }
+
+    table tbody tr td {
+        padding: 10px 5px !important;
+        font-size: 0.75rem;
+    }
+
+    .out-side-border {
+        overflow-x: auto;
+    }
+
+    /* Make tables scrollable on mobile */
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 0.7rem !important;
+    }
+
+    table thead th {
+        padding: 8px 3px !important;
+    }
+
+    table tbody tr td {
+        padding: 8px 3px !important;
+    }
+
+    /* Stacked table layout for very small screens */
+    .table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .table thead {
+        display: none;
+    }
+
+    .table tbody tr td {
+        display: block;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        padding-bottom: 5px;
+    }
+
+    .table tbody tr td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        text-align: left;
+        font-weight: bold;
+        color: #052659;
+    }
+}
+
+/* =========================================================
+   FORM RESPONSIVE
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px 15px;
+        box-shadow: 0px 5px 10px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-header {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .form-container label {
+        font-size: 12px;
+    }
+
+    .form-container input,
+    .form-container textarea,
+    .form-container select {
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .contact-section .contact-content-side {
+        padding: 20px 15px;
+    }
+
+    .btn-pay {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .btn-gold,
+    .btn-outline-light-custom {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .form-container {
+        padding: 25px 20px;
+    }
+
+    .contact-section .contact-content-side {
+        padding: 30px 20px;
+    }
+}
+
+/* =========================================================
+   SECTION PADDING & SPACING
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .section-padding {
+        padding: 40px 0;
+    }
+
+    .sec-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .about-ssv-school {
+        padding: 30px 0;
+    }
+
+    .student-portal-wrapper {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+
+    .app-tile {
+        padding: 20px 15px;
+        gap: 10px;
+    }
+
+    .app-tile i {
+        font-size: 1.8rem;
+    }
+
+    .app-tile span {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .sec-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+
+    .about-ssv-school {
+        padding: 50px 0;
+    }
+}
+
+/* =========================================================
+   FOOTER RESPONSIVE
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .site-footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-heading {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+
+    .social-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+        margin-right: 8px;
+    }
+
+    .floating-announcement {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .floating-announcement a {
+        padding: 10px 16px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .site-footer {
+        padding: 60px 0 30px;
+    }
+
+    .footer-heading {
+        font-size: 1.25rem;
+    }
+}
+
+/* =========================================================
+   STUDENT CORNER RESPONSIVE
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .student-corner h4 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .student-corner-box {
+        padding: 15px 0;
+        margin: 8px 0;
+    }
+
+    .student-corner p {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .student-corner h4 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+}
+
+/* =========================================================
+   EVENT CARD & SLIDER RESPONSIVE
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .event-card {
+        flex-direction: column !important;
+        margin: 15px 0;
+    }
+
+    .event-card img {
+        width: 100% !important;
+        height: 250px !important;
+    }
+
+    .event-card-body {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .event-card-body p {
+        font-size: 13px;
+    }
+
+    .our-events-section .heading-h2 {
+        font-size: 1.5rem;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .event-card {
+        flex-direction: row !important;
+    }
+
+    .event-card img {
+        width: 40% !important;
+        height: 280px !important;
+    }
+
+    .event-card-body {
+        width: 60%;
+    }
+}
+
+/* =========================================================
+   NOTICE SECTION RESPONSIVE
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .Notice-section .custom-card {
+        min-height: 300px;
+        height: auto;
+        margin: 15px 0;
+        padding: 15px;
+    }
+
+    .Notice-section .card-header-custom {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .Notice-section .card-body-custom {
+        padding: 12px;
+    }
+
+    .Notice-section .custom-card p {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .Notice-section .custom-card {
+        min-height: auto;
+        height: auto;
+        padding: 18px;
+    }
+}
+
+/* =========================================================
+   MISSION VISION SECTION RESPONSIVE
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .mission-vision-card {
+        gap: 12px;
+        padding: 15px;
+        box-shadow: 0 0px 10px 3px rgb(168, 168, 168);
+    }
+
+    .mission-vision-card h4 {
+        font-size: 0.95rem;
+    }
+
+    .mission-vision-card p {
+        font-size: 0.85rem;
+    }
+
+    .icon-box {
+        min-width: 45px;
+        min-height: 45px;
+        font-size: 1rem;
+    }
+
+    .about-ssv-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-ssv-info p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .about-ssv-info h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-ssv-info p {
+        font-size: 1rem;
+    }
+}
+
+/* =========================================================
+   LEADERSHIP & TEAM RESPONSIVE
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .our-leaders-card {
+        margin: 15px auto;
+    }
+
+    .our-leaders-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .our-leaders-card-body {
+        padding: 15px;
+    }
+
+    .our-leaders-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .our-leaders-card p {
+        font-size: 0.85rem;
+    }
+
+    .leader-card {
+        padding: 20px 15px;
+    }
+
+    .leader-avatar {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* =========================================================
+   PARENTS SAY & TESTIMONIALS RESPONSIVE
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .Parents-say-card {
+        width: 100% !important;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .Parents-say-card img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .Parents-say-card-body {
+        padding: 12px;
+    }
+
+    .Parents-say-card .Parents-say-card-body p {
+        font-size: 14px;
+    }
+
+    .Parents-say-image {
+        width: 100% !important;
+    }
+
+    .Parents-say-content {
+        width: 100% !important;
+    }
+
+    .testimonial-card {
+        padding: 25px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .Parents-say-card {
+        width: 100% !important;
+        height: auto;
+    }
+
+    .Parents-say-image {
+        width: 45% !important;
+    }
+
+    .Parents-say-content {
+        width: 55% !important;
+    }
+}
+
+/* =========================================================
+   CLASS TIMETABLE RESPONSIVE
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .class-time-table-section h1 {
+        font-size: 1.2rem;
+    }
+
+    .class-time-table-section h2 {
+        font-size: 1rem;
+    }
+
+    .class-time-table-section .container__img-holder {
+        margin: 10px auto;
+        overflow: hidden;
+    }
+
+    .class-time-table-section .container__img-holder img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .modal-image {
+        height: 60vh;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+}
+
+/* =========================================================
+   BLOG SECTION RESPONSIVE
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .blog-section {
+        height: auto;
+    }
+
+    .blog-section .blog-section-content {
+        padding: 30px 20px;
+    }
+
+    .blog-section .blog-section-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .blog-section .blog-section-content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .blog-section .blog-section-content:before {
+        height: 30%;
+    }
+
+    .blog-section img {
+        display: none;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .blog-section .blog-section-content {
+        padding: 30px;
+    }
+
+    .blog-section .blog-section-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* =========================================================
+   CONTACT SECTION RESPONSIVE
+   =========================================================
+*/
+@media (max-width: 480px) {
+    .contact-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .contact-section p,
+    .contact-section a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-section {
+        flex-direction: column;
+    }
+}
+
+/* =========================================================
+   GENERAL RESPONSIVE UTILITIES
+   =========================================================
+*/
+@media (max-width: 480px) {
+    html, body {
+        font-size: 14px;
+    }
+
+    .heading-h1 {
+        font-size: 1.3rem;
+        padding: 12px 0;
+    }
+
+    .heading-h2 {
+        font-size: 1.4rem;
+    }
+
+    .yellow-card,
+    .red-card {
+        max-width: 100%;
+        height: auto;
+        margin-left: 0;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Prevent horizontal scrolling */
+    body, html {
+        overflow-x: hidden;
+    }
+
+    /* Fix for images exceeding viewport */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    iframe {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .heading-h1 {
+        font-size: 1.6rem;
+    }
+
+    .heading-h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 768px) {
+    /* Restore desktop behavior for desktop screens */
+    .custom-navbar .dropdown-menu {
+        position: absolute !important;
+    }
 }

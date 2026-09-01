@@ -26,6 +26,51 @@
             /* color: red !important; */
             overflow-x: hidden;
             line-height: 1.6;
+            max-width: 100%;
+        }
+
+        .container {
+            max-width: 100%;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 920px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1320px;
+            }
         }
 
         /* ------------------------------------
@@ -61,12 +106,12 @@
             transition: var(--transition-main);
         }
 
-       /* Cleaned up Logo positioning */
+       /* Cleaned up Logo positioning - Responsive */
 .navbar-brand img {
     max-height: 80px;
-    /* margin-left: 20px; */
-
     width: auto;
+    height: auto;
+    display: block;
     /* filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); */
 }
 
@@ -82,6 +127,7 @@
     padding: 0.5rem 1.75rem !important;
     white-space: nowrap;
     transition: color 0.3s ease;
+    display: inline-block;
 }
 
 .custom-navbar .nav-link:hover,
@@ -296,10 +342,14 @@
 .about-ssv-school {
     background: #f8f8f8;
     padding: 25px 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .about-ssv-school .container {
     max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .about-ssv-grid {
@@ -307,6 +357,7 @@
     grid-template-columns: 60% 40%;
     gap: 40px;
     align-items: center;
+    width: 100%;
 }
 
 .about-ssv-info h2 {
@@ -889,6 +940,7 @@
             align-items: center;
             gap: 10px;
             animation: pulseGlow 2s infinite;
+            white-space: nowrap;
         }
 
         @keyframes pulseGlow {
@@ -1213,8 +1265,7 @@ table tbody tr th  {
     color:#030335;
     border-radius: 5px;
     /* border: 1px solid #ddd; */
-    box-shadow: 0px 10px 10px 20px black;
-    
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .form-container label  {
@@ -1777,8 +1828,8 @@ table tbody tr th  {
 }
 
 .contact-section .contact-content-side  {
-    padding: 15% 13%;
-    
+    padding: 5% 8%;
+    box-sizing: border-box;
 }
 
 .contact-section .contact-content-side input:focus  {
@@ -1930,7 +1981,7 @@ table tbody tr th  {
     background: #22428b;
     height: 100%;
     position: relative;
-    
+    box-sizing: border-box;
 }
 
 .blog-section img  {
@@ -2176,7 +2227,7 @@ table tbody tr th  {
     
     padding: 20px;
     
-    width: 80%;
+    width: 90%;
     
     max-width: 600px;
     
@@ -2185,7 +2236,6 @@ table tbody tr th  {
     border-radius: 10px;
     
     text-align: center;
-    
 
 }
 
