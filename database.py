@@ -9,3 +9,4 @@ conn = pymysql.connect(
     database=os.getenv("DB_NAME", "school"),
     port=int(os.getenv("DB_PORT", 28680))
 )
+

@@ -288,6 +288,93 @@
             .faculty-table-header { padding: 1.75rem 1.5rem 1rem 1.5rem; }
             .faculty-table-wrapper { padding: 1rem 1.5rem 1.5rem 1.5rem; }
         }
+
+        @media (max-width: 768px) {
+            .faculty-section {
+                padding: 30px 0;
+            }
+
+            .faculty-main-title {
+                font-size: 2.2rem;
+            }
+
+            .faculty-data-card {
+                border-radius: 18px;
+            }
+
+            .faculty-table-wrapper {
+                padding: 1rem;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .premium-faculty-table {
+                min-width: 540px;
+            }
+
+            .premium-faculty-table tbody td,
+            .premium-faculty-table thead th {
+                padding: 12px 10px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .faculty-main-title {
+                font-size: 1.9rem;
+            }
+
+            .premium-faculty-table {
+                min-width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 10px;
+            }
+
+            .premium-faculty-table thead {
+                display: none;
+            }
+
+            .premium-faculty-table tbody,
+            .premium-faculty-table tr,
+            .premium-faculty-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .premium-faculty-table tbody {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .premium-faculty-table tbody tr {
+                background: #f8fafc;
+                border: 1px solid rgba(148, 163, 184, 0.45);
+                border-radius: 14px;
+                padding: 0.85rem 0.9rem;
+                box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+            }
+
+            .premium-faculty-table tbody td {
+                padding: 0.45rem 0;
+                border: 0;
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+                gap: 0.75rem;
+            }
+
+            .premium-faculty-table tbody td::before {
+                content: attr(data-label);
+                font-size: 0.68rem;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: var(--oxford-navy, #0a192f);
+                min-width: 90px;
+                flex-shrink: 0;
+            }
+        }
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -499,7 +586,7 @@
                                         <tr>
                                             <td class="text-center">8</td>
                                             <td>MRS. SIMRAT MATHUR</td>
-                                            <td>Coordinator (Senior Wing) - PGT - Computer Science</td>
+                                            <td>PGT - Computer Science</td>
                                             <td>MCA</td>
                                         </tr>
                                         <tr>
@@ -641,6 +728,21 @@ document.addEventListener("DOMContentLoaded", function () {
     <script src="/toastr/toastr.min.js?v=ldqN9_OcVFZtetwyZMvgDHiiWga1hRgUiY2ML1BBLF0"></script>
     <script src="/HelperJs/auth.min.js?v=JRUoQZCOtlBeX0EftMdEd8WnyZUmEbtQXRUCyi4eSMo"></script>
     <script src="/HelperJs/helperjs.js?v=RHAZrnBcODtko8ooWStTHPsJJ8eQn3NrUM6KtX9zrMk"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('table').forEach((table) => {
+                const headers = Array.from(table.querySelectorAll('thead th')).map((th) => th.textContent.trim());
+                if (!headers.length) return;
+
+                table.querySelectorAll('tbody tr').forEach((row) => {
+                    Array.from(row.children).forEach((cell, index) => {
+                        const label = headers[index] || 'Details';
+                        cell.setAttribute('data-label', label);
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -173,8 +173,99 @@
         }
 
         @media (max-width: 768px) {
-            .ssv-discipline-title { font-size: 2.2rem; }
-            .ssv-discipline-card { padding: 2rem 1.5rem; }
+            .ssv-discipline-section {
+                padding: 30px 0;
+            }
+
+            .ssv-discipline-title {
+                font-size: 2.2rem;
+            }
+
+            .ssv-discipline-card {
+                padding: 2rem 1.5rem;
+                border-radius: 18px;
+            }
+
+            .table-responsive {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .custom-table {
+                min-width: 540px;
+            }
+
+            .custom-table tbody td,
+            .custom-table thead th {
+                padding: 12px 14px;
+                font-size: 13px;
+                white-space: normal;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .ssv-discipline-title {
+                font-size: 1.9rem;
+            }
+
+            .table-responsive {
+                margin: 0;
+                border-radius: 12px;
+            }
+
+            .custom-table {
+                min-width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 10px;
+            }
+
+            .custom-table thead {
+                display: none;
+            }
+
+            .custom-table tbody,
+            .custom-table tr,
+            .custom-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .custom-table tbody {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .custom-table tbody tr {
+                background: #f8fafc;
+                border: 1px solid rgba(148, 163, 184, 0.45);
+                border-radius: 14px;
+                padding: 0.85rem 0.9rem;
+                box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+            }
+
+            .custom-table tbody td {
+                padding: 0.55rem 0;
+                border: 0;
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+                color: var(--text-dark, #333333);
+                word-break: break-word;
+            }
+
+            .custom-table tbody td::before {
+                content: attr(data-label);
+                font-size: 0.68rem;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: var(--oxford-navy, #0a192f);
+                width: 100%;
+                flex-shrink: 0;
+            }
         }
     </style>
 </head>
@@ -335,31 +426,31 @@
                                 <tr>
                                     <td><span class="badge-exam">Half-Yearly Examinations</span></td>
                                     <td>Nursery to Class XII</td>
-                                    <td>September 14 – September 26, 2026</td>
+                                    <td>Sept 14 – Sept 26, 2026</td>
                                     <td>First Term Evaluation</td>
                                 </tr>
                                 <tr>
                                     <td><span class="badge-term">Term II Begins</span></td>
                                     <td>Nursery to Class XII</td>
                                     <td>October 05, 2026</td>
-                                    <td>Second Term Commencement</td>
+                                    <td>2nd Term Commencement</td>
                                 </tr>
                                 <tr>
                                     <td><span class="badge-exam">Periodic Test - II (PT-2)</span></td>
                                     <td>Class I to IX & XI</td>
-                                    <td>December 07 – December 14, 2026</td>
+                                    <td>Dec 07 – Dec 14, 2026</td>
                                     <td>Mid-Term Assessment</td>
                                 </tr>
                                 <tr>
                                     <td><span class="badge-exam">Pre-Board Examinations</span></td>
                                     <td>Class X & XII</td>
-                                    <td>January 11 – January 22, 2027</td>
+                                    <td>Jan 11 – Jan 22, 2027</td>
                                     <td>CBSE Board Preparation</td>
                                 </tr>
                                 <tr>
                                     <td><span class="badge-exam">Annual Examinations</span></td>
                                     <td>Nursery to IX & XI</td>
-                                    <td>February 22 – March 08, 2027</td>
+                                    <td>Feb 22 – March 08, 2027</td>
                                     <td>Final Session Evaluation</td>
                                 </tr>
                             </tbody>
@@ -381,21 +472,21 @@
                             <tbody>
                                 <tr>
                                     <td><strong>Phase 1</strong></td>
-                                    <td>April 2026 – August 2026</td>
+                                    <td>April 2026 – Aug 2026</td>
                                     <td>50% Syllabus Completion</td>
-                                    <td>Evaluated in Half-Yearly Exams</td>
+                                    <td>Half-Yearly Exams</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Phase 2</strong></td>
-                                    <td>October 2026 – December 2026</td>
-                                    <td>Remaining 50% Syllabus Completion</td>
-                                    <td>Evaluated in Pre-Boards / Annuals</td>
+                                    <td>Oct 2026 – Dec 2026</td>
+                                    <td>50% Syllabus Completion</td>
+                                    <td>Pre-Boards / Annuals</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Revision Phase</strong></td>
-                                    <td>January 2027 – February 2027</td>
-                                    <td>Full Syllabus Revision & Mock Tests</td>
-                                    <td>Class Tests & Remedial Classes</td>
+                                    <td>Jan 2027 – Feb 2027</td>
+                                    <td>Revision & Mock Tests</td>
+                                    <td>Tests & Remedial Classes</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -415,42 +506,42 @@
                             <tbody>
                                 <tr>
                                     <td><strong>April 2026</strong></td>
-                                    <td>Orientation Programme & Earth Day Celebration</td>
+                                    <td>Orientation Programme <br>Earth Day Celebration</td>
                                     <td>All Students</td>
                                 </tr>
                                 <tr>
                                     <td><strong>May 2026</strong></td>
-                                    <td>Inter-House Cultural Competition & Summer Camp</td>
+                                    <td>Summer camp <br>Inter-House Competition</td>
                                     <td>Class III to XII</td>
                                 </tr>
                                 <tr>
                                     <td><strong>July 2026</strong></td>
-                                    <td>Investiture Ceremony & Science Exhibition</td>
-                                    <td>Student Council & Middle/Senior Wing</td>
+                                    <td>Investiture Ceremony <br>Science Exhibition</td>
+                                    <td>Student Council <br> Middle/Senior Wing</td>
                                 </tr>
                                 <tr>
                                     <td><strong>August 2026</strong></td>
-                                    <td>Independence Day Celebration & Patriotic Song Fest</td>
+                                    <td>Independence Day Celebration <br> Patriotic Song Fest</td>
                                     <td>All Classes</td>
                                 </tr>
                                 <tr>
                                     <td><strong>October 2026</strong></td>
-                                    <td>Annual Sports Meet & Inter-School IT Fest</td>
+                                    <td>Annual Sports Meet <br> Inter-School IT Fest</td>
                                     <td>All Classes</td>
                                 </tr>
                                 <tr>
                                     <td><strong>November 2026</strong></td>
-                                    <td>Children's Day Carnival & Art Exhibition</td>
+                                    <td>Children's Day Carnival <br> Art Exhibition</td>
                                     <td>All Classes</td>
                                 </tr>
                                 <tr>
                                     <td><strong>December 2026</strong></td>
-                                    <td>Annual Cultural Function (Annual Day)</td>
+                                    <td>Annual Day</td>
                                     <td>All Classes</td>
                                 </tr>
                                 <tr>
                                     <td><strong>January 2027</strong></td>
-                                    <td>Republic Day Parade & Career Counselling Sessions</td>
+                                    <td>Republic Day Parade <br> Career Counselling Sessions</td>
                                     <td>Classes IX to XII</td>
                                 </tr>
                             </tbody>
@@ -514,6 +605,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('table').forEach((table) => {
+                const headers = Array.from(table.querySelectorAll('thead th')).map((th) => th.textContent.trim());
+                if (!headers.length) return;
+
+                table.querySelectorAll('tbody tr').forEach((row) => {
+                    Array.from(row.children).forEach((cell, index) => {
+                        const label = headers[index] || 'Details';
+                        cell.setAttribute('data-label', label);
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

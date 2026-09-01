@@ -219,16 +219,113 @@
         }
 
         @media (max-width: 768px) {
+            .ssv-discipline-section {
+                padding: 30px 0;
+            }
+
             .ssv-discipline-title {
                 font-size: 2.2rem;
+                margin-bottom: 1rem;
             }
+
+            .ssv-discipline-intro {
+                font-size: 1rem;
+            }
+
             .ssv-discipline-card {
-                padding: 2rem 1.5rem;
+                padding: 1rem;
+                border-radius: 18px;
             }
+
+            .table-responsive {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .holiday-table {
+                min-width: 540px;
+            }
+
             .holiday-table tbody td, .holiday-table thead th {
                 padding: 12px 15px;
                 font-size: 13px;
-                white-space: nowrap;
+                white-space: normal;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .ssv-discipline-title {
+                font-size: 1.9rem;
+            }
+
+            .ssv-discipline-card {
+                padding: 0.75rem;
+            }
+
+            .table-responsive {
+                margin: 0;
+                border-radius: 14px;
+            }
+
+            .holiday-table {
+                min-width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 10px;
+            }
+
+            .holiday-table thead {
+                display: none;
+            }
+
+            .holiday-table tbody,
+            .holiday-table tr,
+            .holiday-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .holiday-table tbody {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .holiday-table tbody tr {
+                background: #f8fafc;
+                border: 1px solid rgba(148, 163, 184, 0.45);
+                border-radius: 14px;
+                padding: 0.85rem 0.9rem;
+                box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+            }
+
+            .holiday-table tbody tr.holiday-highlight {
+                background: #fff7d6;
+                border-color: rgba(212, 175, 55, 0.5);
+            }
+
+            .holiday-table tbody td {
+                display: block;
+                width: 100%;
+                padding: 0.5rem 0;
+                border: 0;
+                text-align: left;
+                color: var(--text-dark, #333333);
+                word-break: break-word;
+            }
+
+            .holiday-table tbody td::before {
+                content: attr(data-label);
+                display: block;
+                margin-bottom: 0.25rem;
+                font-size: 0.68rem;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: var(--oxford-navy, #0a192f);
+            }
+
+            .holiday-table tbody td:last-child {
+                border-bottom: none;
             }
         }
     </style>
@@ -664,6 +761,21 @@
 <script src="/toastr/toastr.min.js?v=ldqN9_OcVFZtetwyZMvgDHiiWga1hRgUiY2ML1BBLF0"></script>
 <script src="/HelperJs/auth.min.js?v=JRUoQZCOtlBeX0EftMdEd8WnyZUmEbtQXRUCyi4eSMo"></script>
 <script src="/HelperJs/helperjs.js?v=RHAZrnBcODtko8ooWStTHPsJJ8eQn3NrUM6KtX9zrMk"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const holidayTable = document.querySelector('.holiday-table');
+        if (!holidayTable) return;
+
+        const headers = Array.from(holidayTable.querySelectorAll('thead th')).map((th) => th.textContent.trim());
+
+        holidayTable.querySelectorAll('tbody tr').forEach((row) => {
+            Array.from(row.children).forEach((cell, index) => {
+                const label = headers[index] || 'Details';
+                cell.setAttribute('data-label', label);
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
