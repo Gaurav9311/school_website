@@ -213,9 +213,31 @@
         border-bottom: 1px solid #f0f0f0;
     }
 
+    .dropdown-submenu {
+        position: relative;
+    }
+
     .dropdown-submenu > .dropdown-menu {
+        display: none !important;
         margin-left: 1rem;
         background: #f0f0f0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        position: static !important;
+        width: 100% !important;
+        float: none !important;
+        padding: 0 !important;
+    }
+
+    .dropdown-submenu.show > .dropdown-menu {
+        display: block !important;
+    }
+
+    .dropdown-submenu > .dropdown-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
     }
 }
 

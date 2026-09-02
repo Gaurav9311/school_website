@@ -83,6 +83,14 @@ def helper_js(filename):
     )
 
 
+@app.route("/MobileJs/<path:filename>")
+def mobile_js(filename):
+    return send_from_directory(
+        os.path.join(STATIC_ROOT, "js"),
+        filename
+    )
+
+
 @app.route("/parsleyjs/<path:filename>")
 def parsley_js(filename):
     return send_from_directory(
