@@ -526,6 +526,132 @@
             .ag-item { height: 250px; }
             .student-portal-wrapper { padding: 35px 20px; }
         }
+
+        /* Floating chatbot launcher */
+        .chatbot-launcher {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 1040;
+            width: 62px;
+            height: 62px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            background: var(--oxford-navy);
+            color: var(--imperial-gold);
+            font-size: 1.55rem;
+            text-decoration: none;
+            box-shadow: 0 10px 24px rgba(6, 19, 37, 0.3);
+            transition: transform 0.25s ease, background-color 0.25s ease;
+        }
+
+        .chatbot-launcher:hover,
+        .chatbot-launcher:focus-visible {
+            background: var(--emerald-accent);
+            color: #ffffff;
+            transform: translateY(-4px);
+        }
+
+        .chatbot-launcher-label {
+            position: absolute;
+            right: 72px;
+            white-space: nowrap;
+            padding: 8px 12px;
+            border-radius: 6px;
+            background: #ffffff;
+            color: var(--oxford-navy);
+            font-size: 0.78rem;
+            font-weight: 700;
+            box-shadow: 0 6px 18px rgba(6, 19, 37, 0.15);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(6px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .chatbot-launcher:hover .chatbot-launcher-label,
+        .chatbot-launcher:focus-visible .chatbot-launcher-label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (max-width: 576px) {
+            .chatbot-launcher {
+                right: 16px;
+                bottom: 16px;
+                width: 56px;
+                height: 56px;
+            }
+
+            .chatbot-launcher-label {
+                display: none;
+            }
+        }
+
+        .chatbot-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1050;
+            display: none;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 24px;
+            background: rgba(6, 19, 37, 0.28);
+        }
+
+        .chatbot-modal.is-open {
+            display: flex;
+        }
+
+        .chatbot-modal-panel {
+            position: relative;
+            width: min(480px, 100%);
+            height: min(720px, calc(100vh - 48px));
+            overflow: hidden;
+            border: 1px solid rgba(6, 19, 37, 0.18);
+            border-radius: 14px;
+            background: #ffffff;
+            box-shadow: 0 20px 60px rgba(6, 19, 37, 0.28);
+        }
+
+        .chatbot-modal-panel iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .chatbot-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+            width: 34px;
+            height: 34px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            background: var(--oxford-navy);
+            color: #ffffff;
+            font-size: 1.2rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        @media (max-width: 576px) {
+            .chatbot-modal {
+                align-items: stretch;
+                justify-content: stretch;
+                padding: 12px;
+            }
+
+            .chatbot-modal-panel {
+                width: 100%;
+                height: 100%;
+            }
+        }
  
     </style>
 </head>
@@ -975,6 +1101,18 @@
         </div>
     </footer>
 
+    <button class="chatbot-launcher" type="button" id="chatbot-launcher" aria-label="Open S.S.V. School AI Assistant" aria-controls="chatbot-modal" aria-expanded="false">
+        <i class="fa-solid fa-comments" aria-hidden="true"></i>
+        <span class="chatbot-launcher-label">Ask our AI assistant</span>
+    </button>
+
+    <div class="chatbot-modal" id="chatbot-modal" role="dialog" aria-modal="true" aria-label="S.S.V. School AI Assistant">
+        <div class="chatbot-modal-panel">
+            <button class="chatbot-close" type="button" id="chatbot-close" aria-label="Close chatbot">&times;</button>
+            <iframe src="/chatbot" title="S.S.V. School AI Assistant"></iframe>
+        </div>
+    </div>
+
 
 
 
@@ -1043,6 +1181,39 @@
 });
     </script>
 <script src="/MobileJs/mobile-navbar.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const launcher = document.getElementById("chatbot-launcher");
+        const modal = document.getElementById("chatbot-modal");
+        const closeButton = document.getElementById("chatbot-close");
+
+        function closeChatbot() {
+            modal.classList.remove("is-open");
+            launcher.setAttribute("aria-expanded", "false");
+            launcher.focus();
+        }
+
+        launcher.addEventListener("click", function () {
+            modal.classList.add("is-open");
+            launcher.setAttribute("aria-expanded", "true");
+            closeButton.focus();
+        });
+
+        closeButton.addEventListener("click", closeChatbot);
+
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                closeChatbot();
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && modal.classList.contains("is-open")) {
+                closeChatbot();
+            }
+        });
+    });
+</script>
 </body>
 
 </html>

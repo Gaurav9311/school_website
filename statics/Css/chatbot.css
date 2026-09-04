@@ -1,0 +1,240 @@
+:root {
+  --navy: #10233F;
+  --navy-deep: #0A1830;
+  --gold: #C89B3C;
+  --gold-soft: #E8D9B5;
+  --paper: #F7F6F2;
+  --ink: #1F2430;
+  --ink-soft: #5B6472;
+  --line: #E3E0D8;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  height: 100vh;
+  display: flex;
+}
+
+.app {
+  width: 480px;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0 0 60px rgba(16, 35, 63, 0.08);
+}
+
+/* ---------- Header ---------- */
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 22px;
+  background: var(--navy);
+  color: #fff;
+}
+
+.crest {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--gold-soft);
+  flex-shrink: 0;
+}
+
+.header-text h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.header-text p {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.65);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ADE80;
+  margin-left: auto;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.2);
+}
+
+.clear-chat {
+  margin-left: 15px;
+  padding: 6px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.clear-chat:hover,
+.clear-chat:focus-visible {
+  background: var(--gold);
+  color: var(--navy-deep);
+  outline: none;
+}
+
+.status-dot {
+  margin-left: 0;
+}
+
+/* ---------- Quick chips ---------- */
+
+.chips {
+  display: flex;
+  gap: 8px;
+  padding: 14px 18px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--line);
+  scrollbar-width: none;
+}
+.chips::-webkit-scrollbar { display: none; }
+
+.chip {
+  flex-shrink: 0;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--navy);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.chip:hover {
+  background: var(--gold-soft);
+  border-color: var(--gold);
+}
+
+/* ---------- Message list ---------- */
+
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.msg {
+  max-width: 82%;
+  padding: 11px 14px;
+  border-radius: var(--radius);
+  font-size: 14.5px;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.msg.bot {
+  align-self: flex-start;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top-left-radius: 4px;
+  color: var(--ink);
+}
+
+.msg.user {
+  align-self: flex-end;
+  background: var(--navy);
+  color: #fff;
+  border-top-right-radius: 4px;
+}
+
+.msg.typing {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 14px;
+}
+.msg.typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink-soft);
+  animation: bounce 1.2s infinite ease-in-out;
+}
+.msg.typing span:nth-child(2) { animation-delay: 0.15s; }
+.msg.typing span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+/* ---------- Input area ---------- */
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  padding: 14px 16px;
+  border-top: 1px solid var(--line);
+  background: #fff;
+}
+
+#message {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+#message:focus {
+  border-color: var(--navy);
+}
+
+#send-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s, transform 0.1s;
+}
+#send-btn:hover { background: var(--navy-deep); }
+#send-btn:active { transform: scale(0.94); }
+
+@media (max-width: 520px) {
+  .app { width: 100%; }
+}

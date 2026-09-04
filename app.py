@@ -12,6 +12,7 @@ from routes.fee import fees
 from routes.inquery_con import inquiry_contacts
 from routes.career_inquiry import career
 from routes.notice import notice_bp
+from routes.chatbot import chatbot
 
 app = Flask(__name__, static_folder="statics", static_url_path="/static")
 app.secret_key = "super_secret_key"
@@ -26,6 +27,7 @@ app.register_blueprint(fees)
 app.register_blueprint(inquiry_contacts)
 app.register_blueprint(career)
 app.register_blueprint(notice_bp)
+app.register_blueprint(chatbot)
 
 # =========================================================
 # GLOBAL CACHE DISABLE (BACK BUTTON SECURITY)

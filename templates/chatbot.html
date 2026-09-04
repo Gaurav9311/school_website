@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S.S.V. Public School — AI Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/Css/chatbot.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <header class="chat-header">
+      <div class="crest">SSV</div>
+      <div class="header-text">
+        <h1>Shri Sant Vinoba Public School</h1>
+        <p>AI Assistant · Greater Noida</p>
+      </div>
+      <button class="clear-chat" type="button" id="clear-chat" aria-label="Clear chat">Clear</button>
+      <span class="status-dot" title="Online"></span>
+    </header>
+
+    <div class="chips" id="chips">
+      <button class="chip" data-q="What are the admission requirements?">Admissions</button>
+      <button class="chip" data-q="What facilities does the school have?">Facilities</button>
+      <button class="chip" data-q="What is the school's contact information?">Contact</button>
+      <button class="chip" data-q="What extracurricular activities are available?">Activities</button>
+    </div>
+
+    <main id="chat-box" class="chat-box"></main>
+
+    <form class="input-area" id="chat-form">
+      <input
+        type="text"
+        id="message"
+        placeholder="Ask about admissions, facilities, fees..."
+        autocomplete="off"
+      >
+      <button type="submit" id="send-btn" aria-label="Send message">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M3 11L21 3L14 21L11 13L3 11Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </form>
+
+  </div>
+
+  <script src="/static/js/style.js"></script>
+</body>
+</html>
